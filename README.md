@@ -91,6 +91,60 @@ _New Posts shows how many new posts were published per month_
 
 Bar chart with posts_lang in Show Values, MonthYear in Category. Only the last 6 months are taken into MonthYear using the Select Bottom N function.
 
+#### Table
+_Numeric representation of the chart_
+
+Crosstab with m_post_id_count in summarys, Post_date in Rows and posts_lang in Columns. Fulter: to display only last 6 months.
+
+## List 6
+#### Total Posts
+_Running ? Total Posts of any type?? shows how many posts were published for the entire period until the end of the specified month_
+
+Total Posts is a Stacked bar chart made in the same way as Total Members, as Logi does not have the ability to use the running total function.
+
+We create a set of parameters for each Lang that store the value of all posts at the beginning of each month. This is implemented through an SQL query like:
+
+SELECT DISTINCT posts.m_post_id_count FROM posts WHERE DateDiff('m', posts.FullDate, @CurrDate)>0 AND posts.Lang = 'CN'
+
+For each parameter set there is a function like
+
+if (MonthYear == month_1):
+     	Param_1
+else if (MonthYear == month_2):
+     	Param_2
+
+Thanks to this function, when the chart displays the next group by MonthYear, the value of the desired parameter is displayed.
+
+These functions are combined into one function like:
+
+if (@posts_lang == "EN")
+	@posts_sum_en
+else if (@posts_lang == "ES")
+	@posts_sum_es
+
+So functions are in Show Values, MonthYear is in Category. Only the last 12 months are taken into MonthYear using the Select Bottom N function.
+
+In Y axes format minimum and maximum values edited to improve the visual of the chart.
+
+#### Total Posts All Time
+_Total Posts shows how many posts were published for the entire period until the end of the current month_
+
+Pie chart with posts_lang in Show Values, posts_lang in Category.
+
+#### Table
+_Numeric representation of the chart_
+
+Table with posts_lang in Display, m_post_id_count in Group.
+
+#### Total Posts for last year
+_Total Posts shows how many posts were published in the last 12 months_
+
+Pie chart with posts_lang in Show Values, posts_lang in Category. Filter: only 12 last months
+
+#### Table
+_The table shows how many posts were published in each community at the moment, how many were last year, how many posts were published per year, the percentage of growth per year, how many posts were at the end of the previous month, how many posts were published this month, the percentage of growth per month._
+
+
 
 
 

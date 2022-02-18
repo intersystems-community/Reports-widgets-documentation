@@ -48,6 +48,7 @@ For each m_count_sum, we create a set of parameters that store the value of all 
 SELECT DISTINCT members.m_CountEN_sum FROM members Where DateDiff('m', members.FullDate, @CurrDate) >=1
 
 For each parameter set there is a function like  
+
 if (MonthYear == month_1):  
      	Param_1  
 else if (MonthYear == month_2):  
@@ -143,6 +144,72 @@ Pie chart with posts_lang in Show Values, posts_lang in Category. Filter: only 1
 
 #### Table
 _The table shows how many posts were published in each community at the moment, how many were last year, how many posts were published per year, the percentage of growth per year, how many posts were at the end of the previous month, how many posts were published this month, the percentage of growth per month._
+
+Each table row is a separate table. All rows, which are not growth percentage, is crosstabs, growth percentage rows is tables.
+
+All crosstabs have m_id_distinct in summary, posts_lang in columns.
+
+The difference in the displayed values is formed using filters. For current month – no filters, for last year – filter Date< last year, for last month – filter Date<last month, for yearly growth – filter Date >= last year, for monthly growth – dilter Date >= last month.
+
+Growth percentage tables have formulas (Param_0 – Param_11)/ Param_0 for the year and (Param_0 – Param_1)/ Param_0 for month for each lang in display, fill date with special group (1000 years) in group to avoid bug.
+
+## Lists 7-8
+m_Count_sum – group of metrics, summing up all publications of their type.
+
+## Articles line chart
+_Articles shows how many new articles were published per month_
+
+Articles – is Summary which sum m_CountArticles_sum group by MonthYear.
+
+Bar chart with Articles in Show Values, posts_lang in Clustering. Only the last 6 months are taken into MonthYear using the Select Bottom N function.
+
+#### Table
+_Numeric representation of the chart_
+
+Crosstab with m_CountArticles_sum in summarys, Post_date in Rows and posts_lang in Columns. Fulter: to display only last 6 months.
+
+#### Questions line chart
+_Questions shows how many new questions were published per month_
+
+Questions – is Summary which sum m_CountQuestions _sum group by MonthYear.
+
+Bar chart with Questions in Show Values, posts_lang in Clustering. Only the last 6 months are taken into MonthYear using the Select Bottom N function.
+
+#### Table
+_Numeric representation of the chart_
+
+Crosstab with m_CountQuestions _sum in summarys, Post_date in Rows and posts_lang in Columns. Fulter: to display only last 6 months.
+
+#### Announcements line chart
+_Announcements shows how many new Announcements were published per month_
+
+Announcements – is Summary which sum m_CountAnnouncement_sum group by MonthYear.
+
+Bar chart with Announcements in Show Values, posts_lang in Clustering. Only the last 6 months are taken into MonthYear using the Select Bottom N function.
+
+#### Table
+_Numeric representation of the chart_
+
+Crosstab with m_CountAnnouncement_sum in summarys, Post_date in Rows and posts_lang in Columns. Fulter: to display only last 6 months.
+
+##### Discussions line chart
+_Discussions shows how many new discussions were published per month_
+
+Discussions – is Summary which sum m_CountDiscussion_sum group by MonthYear.
+
+Bar chart with Discussions in Show Values, posts_lang in Clustering. Only the last 6 months are taken into MonthYear using the Select Bottom N function.
+
+#### Table
+_Numeric representation of the chart_
+
+Crosstab with m_CountDiscussions_sum in summarys, Post_date in Rows and posts_lang in Columns. Fulter: to display only last 6 months.
+
+## List 9
+Views have another datasours – IRIS directly.
+
+**New_Views_monthly** – summary which sum Delta group by Date, special function – for each month. This is the equivalent of m_count_sum measures in the first datasours.  
+**posts_lang** - formula to convert database post langs names displayed in report.  
+**Total_Views** - summary which sum Delta group by Lang  
 
 
 

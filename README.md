@@ -84,7 +84,8 @@ Growth tables use a formulas Param_0 – Param_11 for the year and Param_0 – P
 
 Growth % tables use a formula (Param_0 – Param_11)/ Param_0 for the year and (Param_0 – Param_1)/ Param_0 for month.
 
-In this tables MonthYear is in Group to have a group that is needed to avoid this bug (https://github.com/teccod/Logi-Atscale-Tableau-Issues/issues/21)
+In this tables MonthYear is in Group to have a group that is needed to avoid this bug  
+(https://github.com/teccod/Logi-Atscale-Tableau-Issues/issues/21)
 
 ## List 5
 ### New Posts bar chart

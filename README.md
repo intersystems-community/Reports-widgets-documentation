@@ -111,9 +111,9 @@ SELECT DISTINCT posts.m_post_id_count FROM posts WHERE DateDiff('m', posts.FullD
 For each parameter set there is a function like
 
     if (MonthYear == month_1):  
-     	Param_1  
+        Param_1  
     else if (MonthYear == month_2):  
-     	Param_2  
+        Param_2  
 
 Thanks to this function, when the chart displays the next group by MonthYear, the value of the desired parameter is displayed.
 

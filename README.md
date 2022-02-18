@@ -28,12 +28,71 @@ Post_date is the formula “FirstDayOfMonth(@posts_FullDate)”, new idea
 
 ## List 2
 #### New Members bar chart
-A member counts in every community in which (s)he participates. All members participate in the English community. New members are counted as users who registered this month and can be counted in multiple communities at once.
+_A member counts in every community in which (s)he participates. All members participate in the English community. New members are counted as users who registered this month and can be counted in multiple communities at once._
 
 The chart is built as m_count_sum in Show Values, divided into categories (Category) by MonthYear. Only the last 6 months are taken into MonthYear using the Select Bottom N function.
 
 #### New Members table
-Numeric representation of the chart
+_Numeric representation of the chart_
 
 Built in a similar way: measures m_count_sum in Display, MonthYear in Group.
+
+## List3
+#### Total Members
+_Total Members shows the number of all community members by the end of the month_
+
+Total Members is Stacked bar chart, displaying the running total of m_count_sum divided into categories (Category) by MonthYear. Logi does not have the ability to use the running total function, so we will implement it ourselves.
+
+For each m_count_sum, we create a set of parameters that store the value of all members at the beginning of each month. This is implemented through an SQL query like:
+
+SELECT DISTINCT members.m_CountEN_sum FROM members Where DateDiff('m', members.FullDate, @CurrDate) >=1
+
+For each parameter set there is a function like  
+if (MonthYear == month_1):
+     	Param_1
+else if (MonthYear == month_2):
+     	Param_2
+
+Thanks to this function, when the chart displays the next group by MonthYear, the value of the desired parameter is displayed.
+
+So functions are in Show Values, MonthYear is in Category. Only the last 12 months are taken into MonthYear using the Select Bottom N function.
+
+#### Total Members All Time
+Total Members All Time shows the number of all members of the community at the current moment
+
+Pie chart where functions are in Show Values, MonthYear is in Category, but from MonthYear the bottom 1 is selected to show the sum of members for the last month.
+
+The table next to the diagram is built similarly: functions are in Display, MonthYear is in Group and from MonthYear the bottom 1 is selected to show the sum of members for the last month.
+
+KPI for the chart shows the number of English users, as all users belong to this group.
+
+## List 4
+#### Total Members for last year
+_Total Members for last year show the number of community members registered this year_
+
+Here we use other functions in which the parameter for the eleventh month (Param_11) is subtracted from the parameter for the current month (Param_0).
+
+Pie chart where functions are in Show Values, MonthYear is in Category, but from MonthYear the bottom 1 is selected in order to have a group that is needed to combine several functions into one diagram
+
+### Table
+_The table shows how many members there are in each community at the  current moment, how many there  were last year, how fast much the community grew in a year, percentage of growth per year, how many members were at the end of the previous month, how fast much the community grew in the current month, growth percentage for month._
+
+Each table row is a separate table. The three tables for current and previous month and previous year use the formulas for Total Members All Time in Display, MonthYear is in Group and from MonthYear the bottom 1 is selected to get the value for the desired month.
+
+Growth tables use a formulas Param_0 – Param_11 for the year and Param_0 – Param_1 for month.
+
+Growth % tables use a formula (Param_0 – Param_11)/ Param_0 for the year and (Param_0 – Param_1)/ Param_0 for month.
+
+In this tables MonthYear is in Group to have a group that is needed to avoid this bug (https://github.com/teccod/Logi-Atscale-Tableau-Issues/issues/21)
+
+## List 5
+#### New Posts bar chart
+_New Posts shows how many new posts were published per month_
+
+Bar chart with posts_lang in Show Values, MonthYear in Category. Only the last 6 months are taken into MonthYear using the Select Bottom N function.
+
+
+
+
+
 

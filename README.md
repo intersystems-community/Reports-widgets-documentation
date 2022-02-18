@@ -48,10 +48,10 @@ For each m_count_sum, we create a set of parameters that store the value of all 
 SELECT DISTINCT members.m_CountEN_sum FROM members Where DateDiff('m', members.FullDate, @CurrDate) >=1
 
 For each parameter set there is a function like  
-if (MonthYear == month_1):
-     	Param_1
-else if (MonthYear == month_2):
-     	Param_2
+if (MonthYear == month_1):  
+     	Param_1  
+else if (MonthYear == month_2):  
+     	Param_2  
 
 Thanks to this function, when the chart displays the next group by MonthYear, the value of the desired parameter is displayed.
 
@@ -108,19 +108,19 @@ SELECT DISTINCT posts.m_post_id_count FROM posts WHERE DateDiff('m', posts.FullD
 
 For each parameter set there is a function like
 
-if (MonthYear == month_1):
-     	Param_1
-else if (MonthYear == month_2):
-     	Param_2
+if (MonthYear == month_1):  
+     	Param_1  
+else if (MonthYear == month_2):  
+     	Param_2  
 
 Thanks to this function, when the chart displays the next group by MonthYear, the value of the desired parameter is displayed.
 
 These functions are combined into one function like:
 
-if (@posts_lang == "EN")
-	@posts_sum_en
-else if (@posts_lang == "ES")
-	@posts_sum_es
+if (@posts_lang == "EN")  
+	@posts_sum_en  
+else if (@posts_lang == "ES")  
+	@posts_sum_es  
 
 So functions are in Show Values, MonthYear is in Category. Only the last 12 months are taken into MonthYear using the Select Bottom N function.
 

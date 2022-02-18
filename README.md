@@ -192,7 +192,7 @@ _Numeric representation of the chart_
 
 Crosstab with m_CountAnnouncement_sum in summarys, Post_date in Rows and posts_lang in Columns. Fulter: to display only last 6 months.
 
-##### Discussions line chart
+#### Discussions line chart
 _Discussions shows how many new discussions were published per month_
 
 Discussions – is Summary which sum m_CountDiscussion_sum group by MonthYear.
@@ -211,9 +211,23 @@ Views have another datasours – IRIS directly.
 **posts_lang** - formula to convert database post langs names displayed in report.  
 **Total_Views** - summary which sum Delta group by Lang  
 
+#### New Views
+_New Views shows how many views were for the specified month for all publications_
 
+Bar chart with New_Views_monthly in Show Values and Lang in Clustering. Lang formed by posts_lang - formula to convert database post langs names in displayed in report. Only the last 6 months are taken into Date using the Select Bottom N function.
 
+## List 10
+#### Total Views
+_Total Views shows how many views all posts had in total_
 
+Pie chart with Total_Views in Show Values.
 
+#### Total Views for last year
+_Total Views for last year shows how many total views all posts had in the last 12 months_
 
+Pie chart with Total_Views in Show Values. Filter: Date >= last year
 
+#### Table
+_The table shows how many views all posts had in total and how many views all posts had in the last 12 months._
+
+2 crosstabs with sum of Delta in summary, posts_lang in columns. For current month – no filter, for YTY Growth: Date >= last year

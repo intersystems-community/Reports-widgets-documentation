@@ -28,10 +28,9 @@ Post_date is the formula “FirstDayOfMonth(@posts_FullDate)”, new idea
 ### New Members bar chart
 _A member counts in every community in which (s)he participates. All members participate in the English community. New members are counted as users who registered this month and can be counted in multiple communities at once._
 
-The chart is built as m_count_sum in Show Values, divided into categories (Category) by MonthYear. Only the last 6 months are taken into MonthYear using the Select Bottom N function.
+The chart is built as m_count_sum in Show Values, divided into categories (Category) by MonthYear. Only the last 6 months are taken into MonthYear using the Select Bottom N function, and current month skipped by Skip First option.
 
 ### New Members table
-_Numeric representation of the chart_
 
 Built in a similar way: measures m_count_sum in Display, MonthYear in Group.
 
@@ -54,10 +53,10 @@ For each parameter set there is a function like
 
 Thanks to this function, when the chart displays the next group by MonthYear, the value of the desired parameter is displayed.
 
-So functions are in Show Values, MonthYear is in Category. Only the last 12 months are taken into MonthYear using the Select Bottom N function.
+So functions are in Show Values, MonthYear is in Category. Only the last 12 months are taken into MonthYear using the Select Bottom N function, and current month skipped by Skip First option.
 
 ### Total Members All Time
-Total Members All Time shows the number of all members of the community at the current moment
+_Total Members All Time shows the number of all members of the community at the current moment_
 
 Pie chart where functions are in Show Values, MonthYear is in Category, but from MonthYear the bottom 1 is selected to show the sum of members for the last month.
 
@@ -67,14 +66,13 @@ KPI for the chart shows the number of English users, as all users belong to this
 
 ## List 4
 ### Total Members for last year
-_Total Members for last year show the number of community members registered this year_
+_Total Members for last year show the number of community members registered in previous 12 months_
 
 Here we use other functions in which the parameter for the eleventh month (Param_11) is subtracted from the parameter for the current month (Param_0).
 
 Pie chart where functions are in Show Values, MonthYear is in Category, but from MonthYear the bottom 1 is selected in order to have a group that is needed to combine several functions into one diagram
 
 ### Table
-_The table shows how many members there are in each community at the  current moment, how many there  were last year, how fast much the community grew in a year, percentage of growth per year, how many members were at the end of the previous month, how fast much the community grew in the current month, growth percentage for month._
 
 Each table row is a separate table. The three tables for current and previous month and previous year use the formulas for Total Members All Time in Display, MonthYear is in Group and from MonthYear the bottom 1 is selected to get the value for the desired month.
 
@@ -89,16 +87,15 @@ In this tables MonthYear is in Group to have a group that is needed to avoid thi
 ### New Posts bar chart
 _New Posts shows how many new posts were published per month_
 
-Bar chart with posts_lang in Show Values, MonthYear in Category. Only the last 6 months are taken into MonthYear using the Select Bottom N function.
+Bar chart with posts_lang in Show Values, MonthYear in Category. Only the last 6 months are taken into MonthYear using the Select Bottom N function, and current month skipped by Skip First option.
 
 ### Table
-_Numeric representation of the chart_
 
-Crosstab with m_post_id_count in summarys, Post_date in Rows and posts_lang in Columns. Fulter: to display only last 6 months.
+Crosstab with m_post_id_count in summarys, Post_date in Rows and posts_lang in Columns. Fulter: to display only last 6 months and not display current month.
 
 ## List 6
 ### Total Posts
-_Running ? Total Posts of any type?? shows how many posts were published for the entire period until the end of the specified month_
+_Running Total Posts of any type shows how many posts were published for the entire period until the end of the specified month_
 
 Total Posts is a Stacked bar chart made in the same way as Total Members, as Logi does not have the ability to use the running total function.
 
@@ -122,7 +119,7 @@ These functions are combined into one function like:
     else if (@posts_lang == "ES")  
         @posts_sum_es  
 
-So functions are in Show Values, MonthYear is in Category. Only the last 12 months are taken into MonthYear using the Select Bottom N function.
+So functions are in Show Values, MonthYear is in Category. Only the last 12 months are taken into MonthYear using the Select Bottom N function, and current month skipped by Skip First option.
 
 In Y axes format minimum and maximum values edited to improve the visual of the chart.
 
@@ -132,27 +129,26 @@ _Total Posts shows how many posts were published for the entire period until the
 Pie chart with posts_lang in Show Values, posts_lang in Category.
 
 ### Table
-_Numeric representation of the chart_
 
-Table with posts_lang in Display, m_post_id_count in Group.
+Table with posts_lang in Display, m_post_id_count in Group. Fulter: not to display current month.
 
+## List 7
 ### Total Posts for last year
 _Total Posts shows how many posts were published in the last 12 months_
 
-Pie chart with posts_lang in Show Values, posts_lang in Category. Filter: only 12 last months
+Pie chart with posts_lang in Show Values, posts_lang in Category. Filters: only 12 last months and not to display current month.
 
 ### Table
-_The table shows how many posts were published in each community at the moment, how many were last year, how many posts were published per year, the percentage of growth per year, how many posts were at the end of the previous month, how many posts were published this month, the percentage of growth per month._
 
 Each table row is a separate table. All rows, which are not growth percentage, is crosstabs, growth percentage rows is tables.
 
 All crosstabs have m_id_distinct in summary, posts_lang in columns.
 
-The difference in the displayed values is formed using filters. For current month – no filters, for last year – filter Date< last year, for last month – filter Date<last month, for yearly growth – filter Date >= last year, for monthly growth – dilter Date >= last month.
+The difference in the displayed values is formed using filters. For current month – filter Date < current month, for last year – filter Date < last year, for last month – filter Date < last month, for yearly growth – filter Date >= last year, for monthly growth – dilter Date >= last month.
 
 Growth percentage tables have formulas (Param_0 – Param_11)/ Param_0 for the year and (Param_0 – Param_1)/ Param_0 for month for each lang in display, fill date with special group (1000 years) in group to avoid bug.
 
-## Lists 7-8
+## Lists 8
 m_Count_sum – group of metrics, summing up all publications of their type.
 
 ### Articles line chart
@@ -160,51 +156,61 @@ _Articles shows how many new articles were published per month_
 
 Articles – is Summary which sum m_CountArticles_sum group by MonthYear.
 
-Bar chart with Articles in Show Values, posts_lang in Clustering. Only the last 6 months are taken into MonthYear using the Select Bottom N function.
+Line chart with Articles in Show Values, posts_lang in Clustering. Only the last 6 months are taken into MonthYear using the Select Bottom N function, and current month skipped by Skip First option.
 
 ### Table
-_Numeric representation of the chart_
 
-Crosstab with m_CountArticles_sum in summarys, Post_date in Rows and posts_lang in Columns. Fulter: to display only last 6 months.
+Crosstab with m_CountArticles_sum in summarys, Post_date in Rows and posts_lang in Columns. Fulter: to display only last 6 months and not display current month.
 
 ### Questions line chart
 _Questions shows how many new questions were published per month_
 
-Questions – is Summary which sum m_CountQuestions _sum group by MonthYear.
+Questions – is Summary which sum m_CountQuestions_sum group by MonthYear.
 
-Bar chart with Questions in Show Values, posts_lang in Clustering. Only the last 6 months are taken into MonthYear using the Select Bottom N function.
+Line chart with Questions in Show Values, posts_lang in Clustering. Only the last 6 months are taken into MonthYear using the Select Bottom N function, and current month skipped by Skip First option.
 
 ### Table
-_Numeric representation of the chart_
 
-Crosstab with m_CountQuestions _sum in summarys, Post_date in Rows and posts_lang in Columns. Fulter: to display only last 6 months.
+Crosstab with m_CountQuestions_sum in summarys, Post_date in Rows and posts_lang in Columns. Fulter: to display only last 6 months and not display current month.
 
+## List 9
 ### Announcements line chart
 _Announcements shows how many new Announcements were published per month_
 
 Announcements – is Summary which sum m_CountAnnouncement_sum group by MonthYear.
 
-Bar chart with Announcements in Show Values, posts_lang in Clustering. Only the last 6 months are taken into MonthYear using the Select Bottom N function.
+Line chart with Announcements in Show Values, posts_lang in Clustering. Only the last 6 months are taken into MonthYear using the Select Bottom N function, and current month skipped by Skip First option.
 
 ### Table
-_Numeric representation of the chart_
 
-Crosstab with m_CountAnnouncement_sum in summarys, Post_date in Rows and posts_lang in Columns. Fulter: to display only last 6 months.
+Crosstab with m_CountAnnouncement_sum in summarys, Post_date in Rows and posts_lang in Columns. Fulter: to display only last 6 months and not display current month.
 
 ### Discussions line chart
 _Discussions shows how many new discussions were published per month_
 
 Discussions – is Summary which sum m_CountDiscussion_sum group by MonthYear.
 
-Bar chart with Discussions in Show Values, posts_lang in Clustering. Only the last 6 months are taken into MonthYear using the Select Bottom N function.
+Line chart with Discussions in Show Values, posts_lang in Clustering. Only the last 6 months are taken into MonthYear using the Select Bottom N function, and current month skipped by Skip First option.
 
 ### Table
-_Numeric representation of the chart_
 
-Crosstab with m_CountDiscussions_sum in summarys, Post_date in Rows and posts_lang in Columns. Fulter: to display only last 6 months.
+Crosstab with m_CountDiscussions_sum in summarys, Post_date in Rows and posts_lang in Columns. Fulter: to display only last 6 months and not display current month.
 
-## List 9
-Views have another datasours – IRIS directly.
+## List 10
+### Questions Situation pie chart
+_This chart shows the distribution of the total number of questions into 3 categories: answer accepted, answer received and no answer._
+
+Question_situation - is Summary on m_CountQuestions_sum group by QuestionType
+
+Pie chart with Question_situation in Show Values. Fulter: not to display current month.
+
+### Questions over time bar chart
+_This chart shows the distribution of question status over the past 6 months._
+
+Bar chart Questions summary in Show Values and QuestionType in Series. Only the last 6 months are taken into MonthYear using the Select Bottom N function, and current month skipped by Skip First option.
+
+## List 11
+Views have another datasours – IRIS directly. Querry have the filter not to show data for current month.
 
 **New_Views_monthly** – summary which sum Delta group by Date, special function – for each month. This is the equivalent of m_count_sum measures in the first datasours.  
 **posts_lang** - formula to convert database post langs names displayed in report.  
@@ -215,7 +221,7 @@ _New Views shows how many views were for the specified month for all publication
 
 Bar chart with New_Views_monthly in Show Values and Lang in Clustering. Lang formed by posts_lang - formula to convert database post langs names in displayed in report. Only the last 6 months are taken into Date using the Select Bottom N function.
 
-## List 10
+## List 12
 ### Total Views
 _Total Views shows how many views all posts had in total_
 
@@ -227,6 +233,5 @@ _Total Views for last year shows how many total views all posts had in the last 
 Pie chart with Total_Views in Show Values. Filter: Date >= last year
 
 ### Table
-_The table shows how many views all posts had in total and how many views all posts had in the last 12 months._
 
 2 crosstabs with sum of Delta in summary, posts_lang in columns. For current month – no filter, for YTY Growth: Date >= last year

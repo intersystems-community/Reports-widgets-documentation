@@ -234,4 +234,13 @@ Pie chart with Total_Views in Show Values. Filter: Date >= last year
 
 ### Table
 
-2 crosstabs with sum of Delta in summary, posts_lang in columns. For current month – no filter, for YTY Growth: Date >= last year
+Post_langs_order - is a formula, which assigns each language a serial number to organize the display order 
+
+Year_growth formula for each language calculates the percentage of growth for the period using the formula (Param1 - Param2)/Param1 * 100 where Param1 - the sum of all views for the period up to the last month and Param2 - the sum of all views for the period up to the 13 months
+
+Month_growth formula for each language calculates the percentage of growth for the period using the formula (Param1 - Param2)/Param1 * 100 where Param1 - the sum of all views for the period up to the last month and Param2 - the sum of all views for the period up to the 2 months
+
+The table consists of 7 crosstabs. 5 crosstabs with sum of Delta in summary, Post_langs_order in columns. For current month – no filter, for YTY Growth: Date >= last year, for MTM Growth: Date >= last month, for last year Date < last year, for last month Date < last month.
+
+1 crosstabs have maximum of Year_growth formulas in summary, Post_langs_order in columns.
+1 crosstabs have maximum of Month_growth formulas in summary, Post_langs_order in columns.

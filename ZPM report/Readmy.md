@@ -9,6 +9,8 @@
 
 ### Country - shows in which country the installation was made.
 
+### Container - shows if the application was installed in Docker container or directly on the server OS. 
+
 # Measures
 ### m_Count_sum - stores the total number of installs.
 
@@ -88,7 +90,7 @@ Pie chart with [m_Count_sum](https://github.com/teccod/Reports-widgets-documenta
 
 _This chart show distribution of total installs by types of installation._
 
-Pie chart with [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#m_count_sum---stores-the-total-number-of-installs) in Show Values and Container in Category.
+Pie chart with [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#m_count_sum---stores-the-total-number-of-installs) in Show Values and [Container](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#container---shows-if-the-application-was-installed-in-Docker-container-or-directly-on-the-server-os) in Category.
 
 # List 2
 
@@ -159,7 +161,7 @@ Pie chart with [m_Count_sum](https://github.com/teccod/Reports-widgets-documenta
 
 _This chart show distribution of total installs of apps with IRIS 2021 version by types of installation._
 
-Pie chart with [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#m_count_sum---stores-the-total-number-of-installs) in Show Values and Container in Category.
+Pie chart with [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#m_count_sum---stores-the-total-number-of-installs) in Show Values and [Container](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#container---shows-if-the-application-was-installed-in-Docker-container-or-directly-on-the-server-os) in Category.
 
 # List 3
 _On this page we have all data about activity last month related to the 2021 IRIS version and installations in Docker containers._
@@ -168,13 +170,13 @@ _On this page we have all data about activity last month related to the 2021 IRI
 
 _Amount of total installs of IRIS 2021 applications in Docker containers._
 
-Label displaying the parameter based on [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#m_count_sum---stores-the-total-number-of-installs) from which the last month’s data is selected, [SystemVersionNumber](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#systemversionnumber---shows-for-which-particular-version-of-iris-the-application-was-installed) contains 2021 and Container equal to “Docker”. At the bottom of the label there is a label with data for the last 2 month. It displays a formula for displaying the name of the month and the parameter. The parameter is a copy of the one described above, but for a different period of time. 
+Label displaying the parameter based on [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#m_count_sum---stores-the-total-number-of-installs) from which the last month’s data is selected, [SystemVersionNumber](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#systemversionnumber---shows-for-which-particular-version-of-iris-the-application-was-installed) contains 2021 and [Container](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#container---shows-if-the-application-was-installed-in-Docker-container-or-directly-on-the-server-os) equal to “Docker”. At the bottom of the label there is a label with data for the last 2 month. It displays a formula for displaying the name of the month and the parameter. The parameter is a copy of the one described above, but for a different period of time. 
 
 ## Total modules
 
 _Amount of distinct IRIS 2021 applications that have been installed in Docker containers._
 
-Label displaying the parameter based on [m_Name_distinct](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#m_name_distinct---stores-the-total-number-of-applications-for-which-there-were-installations)  from which the last month’s data is selected, [SystemVersionNumber](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#systemversionnumber---shows-for-which-particular-version-of-iris-the-application-was-installed) contains 2021 and Container equal to “Docker”. At the bottom of the label there is a label with data for the last 2 month. It displays a formula for displaying the name of the month and the parameter. The parameter is a copy of the one described above, but for a different period of time. 
+Label displaying the parameter based on [m_Name_distinct](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#m_name_distinct---stores-the-total-number-of-applications-for-which-there-were-installations)  from which the last month’s data is selected, [SystemVersionNumber](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#systemversionnumber---shows-for-which-particular-version-of-iris-the-application-was-installed) contains 2021 and [Container](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#container---shows-if-the-application-was-installed-in-Docker-container-or-directly-on-the-server-os) equal to “Docker”. At the bottom of the label there is a label with data for the last 2 month. It displays a formula for displaying the name of the month and the parameter. The parameter is a copy of the one described above, but for a different period of time. 
 
 ## Total hosts
 
@@ -199,7 +201,7 @@ Label displaying the parameter based on [m_IP_distinct](https://github.com/tecco
 			{return ToText(Truncate(percent,1 )) + ' % MTM'}
 	}
 
-# All tables and charts based on Query that are filtered by MajorVersion (MajorVersion like 2021%) and the last month’s data is selected, SystemVersionNumber contains 2021 and Container equal to “Docker”.
+# All tables and charts based on Query that are filtered by MajorVersion (MajorVersion like 2021%) and the last month’s data is selected, SystemVersionNumber contains 2021 and [Container](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#container---shows-if-the-application-was-installed-in-Docker-container-or-directly-on-the-server-os) equal to “Docker”.
 
 ## Full Version table
 
@@ -228,7 +230,7 @@ Pie chart with [m_Count_sum](https://github.com/teccod/Reports-widgets-documenta
 
 _This chart show distribution of total installs of apps with IRIS 2021 version in Docker containers by types of installation._
 
-Pie chart with [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#m_count_sum---stores-the-total-number-of-installs) in Show Values and Container in Category.
+Pie chart with [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#m_count_sum---stores-the-total-number-of-installs) in Show Values and [Container](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#container---shows-if-the-application-was-installed-in-Docker-container-or-directly-on-the-server-os) in Category.
 
 # List 4
 _On this page we have all data about activity at last month related to only the 2021 IRIS version and installations directly on server OS._
@@ -237,19 +239,19 @@ _On this page we have all data about activity at last month related to only the 
 
 _Amount of total installs of IRIS 2021 applications directly on server OS._
 
-Label displaying the parameter based on [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#m_count_sum---stores-the-total-number-of-installs) from which the last month’s data is selected, [SystemVersionNumber](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#systemversionnumber---shows-for-which-particular-version-of-iris-the-application-was-installed) contains 2021 and Container equal to “Server”. At the bottom of the label there is a label with data for the last 2 month. It displays a formula for displaying the name of the month and the parameter. The parameter is a copy of the one described above, but for a different period of time. 
+Label displaying the parameter based on [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#m_count_sum---stores-the-total-number-of-installs) from which the last month’s data is selected, [SystemVersionNumber](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#systemversionnumber---shows-for-which-particular-version-of-iris-the-application-was-installed) contains 2021 and [Container](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#container---shows-if-the-application-was-installed-in-Docker-container-or-directly-on-the-server-os) equal to “Server”. At the bottom of the label there is a label with data for the last 2 month. It displays a formula for displaying the name of the month and the parameter. The parameter is a copy of the one described above, but for a different period of time. 
 
 ## Total modules
 
 _Amount of distinct IRIS 2021 applications that have been installed directly on server OS._
 
-Label displaying the parameter based on [m_Name_distinct](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#m_name_distinct---stores-the-total-number-of-applications-for-which-there-were-installations)  from which the last month’s data is selected, [SystemVersionNumber](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#systemversionnumber---shows-for-which-particular-version-of-iris-the-application-was-installed) contains 2021 and Container equal to “Server”. At the bottom of the label there is a label with data for the last 2 month. It displays a formula for displaying the name of the month and the parameter. The parameter is a copy of the one described above, but for a different period of time. 
+Label displaying the parameter based on [m_Name_distinct](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#m_name_distinct---stores-the-total-number-of-applications-for-which-there-were-installations)  from which the last month’s data is selected, [SystemVersionNumber](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#systemversionnumber---shows-for-which-particular-version-of-iris-the-application-was-installed) contains 2021 and [Container](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#container---shows-if-the-application-was-installed-in-Docker-container-or-directly-on-the-server-os) equal to “Server”. At the bottom of the label there is a label with data for the last 2 month. It displays a formula for displaying the name of the month and the parameter. The parameter is a copy of the one described above, but for a different period of time. 
 
 ## Total hosts
 
 _Amount of distinct ip addresses from which IRIS 2021 applications were installed directly on server OS._
 
-Label displaying the parameter based on [m_IP_distinct](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#m_ip_distinct---stores-the-total-number-of-ip-addresses-on-which-applications-were-installed) from which the last month’s data is selected, [SystemVersionNumber](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#systemversionnumber---shows-for-which-particular-version-of-iris-the-application-was-installed) contains 2021 and Container equal to “Server”. At the bottom of the label there is a label with data for the last 2 month. It displays a formula for displaying the name of the month and the parameter. The parameter is a copy of the one described above, but for a different period of time. 
+Label displaying the parameter based on [m_IP_distinct](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#m_ip_distinct---stores-the-total-number-of-ip-addresses-on-which-applications-were-installed) from which the last month’s data is selected, [SystemVersionNumber](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#systemversionnumber---shows-for-which-particular-version-of-iris-the-application-was-installed) contains 2021 and [Container](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#container---shows-if-the-application-was-installed-in-Docker-container-or-directly-on-the-server-os) equal to “Server”. At the bottom of the label there is a label with data for the last 2 month. It displays a formula for displaying the name of the month and the parameter. The parameter is a copy of the one described above, but for a different period of time. 
 
 ## MTM formulas and YTY formulas
 
@@ -268,7 +270,7 @@ Label displaying the parameter based on [m_IP_distinct](https://github.com/tecco
 			{return ToText(Truncate(percent,1 )) + ' % MTM'}
 	}
 
-# All tables and charts based on Query that are filtered by MajorVersion (MajorVersion like 2021%) and the last month’s data is selected, SystemVersionNumber contains 2021 and Container equal to “Server”.
+# All tables and charts based on Query that are filtered by MajorVersion (MajorVersion like 2021%) and the last month’s data is selected, SystemVersionNumber contains 2021 and [Container](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#container---shows-if-the-application-was-installed-in-Docker-container-or-directly-on-the-server-os) equal to “Server”.
 
 ## Full Version table
 
@@ -299,7 +301,7 @@ Pie chart with [m_Count_sum](https://github.com/teccod/Reports-widgets-documenta
 
 _This chart show distribution of total installs of apps with IRIS 2021 version directly on server OSby types of installation._
 
-Pie chart with [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#m_count_sum---stores-the-total-number-of-installs) in Show Values and Container in Category.
+Pie chart with [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#m_count_sum---stores-the-total-number-of-installs) in Show Values and [Container](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#container---shows-if-the-application-was-installed-in-Docker-container-or-directly-on-the-server-os) in Category.
  
 # List 5
 _On this page we have charts that represent installation data for the last half a year._
@@ -327,7 +329,7 @@ All  charts based on Query where the last month’s data is selected
 
 _This chart shows distribution of total installs by installation type (Docker container or server OS)._
 
-Chart has CountContainer in Show Values and months in Series. Groups are swapped. CountContainer is the summary of [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#m_count_sum---stores-the-total-number-of-installs) group by Container.
+Chart has CountContainer in Show Values and months in Series. Groups are swapped. CountContainer is the summary of [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#m_count_sum---stores-the-total-number-of-installs) group by C[Container](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#container---shows-if-the-application-was-installed-in-Docker-container-or-directly-on-the-server-os).
 
 ## Hosts Monthly bar chart
 

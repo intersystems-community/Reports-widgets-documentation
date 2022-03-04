@@ -329,7 +329,7 @@ All  charts based on Query where the last month’s data is selected
 
 _This chart shows distribution of total installs by installation type (Docker container or server OS)._
 
-Chart has CountContainer in Show Values and months in Series. Groups are swapped. CountContainer is the summary of [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#m_count_sum---stores-the-total-number-of-installs) group by C[Container](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#container---shows-if-the-application-was-installed-in-Docker-container-or-directly-on-the-server-os).
+Chart has CountContainer in Show Values and months in Series. Groups are swapped. CountContainer is the summary of [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#m_count_sum---stores-the-total-number-of-installs) group by [Container](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#container---shows-if-the-application-was-installed-in-Docker-container-or-directly-on-the-server-os).
 
 ## Hosts Monthly bar chart
 

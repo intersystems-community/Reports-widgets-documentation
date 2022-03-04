@@ -1,18 +1,18 @@
 # Dimensions
-SystemVersionNumber - shows for which particular version of IRIS the application was installed.
+### SystemVersionNumber - shows for which particular version of IRIS the application was installed.
 
-Name - shows the name of the application.
+### Name - shows the name of the application.
 
-TopName - stores the names of the 10 most popular applications. All other applications are designated under the name ZPM.
+### TopName - stores the names of the 10 most popular applications. All other applications are designated under the name ZPM.
 
-Country - shows in which country the installation was made.
+### Country - shows in which country the installation was made.
 
 # Measures
-m_Count_sum - stores the total number of installs.
+### m_Count_sum - stores the total number of installs.
 
-m_Name distinct - stores the total number of applications for which there were installations.
+### m_Name distinct - stores the total number of applications for which there were installations.
 
-m_IP_distinct - stores the total number of IP addresses on which applications were installed.
+### m_IP_distinct - stores the total number of IP addresses on which applications were installed.
 
 
 

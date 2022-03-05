@@ -5,7 +5,7 @@
 
 ### Name - shows the name of the application.
 
-### TopName - stores the names of the 10 most popular applications. All other applications are designated under the name ZPM.
+### TopName - stores the names of the 10 most popular applications. All other applications are designated under the name Other.
 
 ### Country - shows in which country the installation was made.
 
@@ -316,7 +316,7 @@ Chart has m_Count_sum_summary in Show Values. m_Count_sum_summary is the summary
 
 ## Top applications installs bar chart
 
-_This chart shows distribution of total installs by 10 most popular applications. ZPM on chart represents all other applications._
+_This chart shows distribution of total installs by 10 most popular applications. Other on chart represents all other applications._
 
 Chart has CountByTopName in Show Values and months in Series. Groups are swapped. CountByTopName is the summary of [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#m_count_sum---stores-the-total-number-of-installs) group by [TopName](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/Readmy.md#topname---stores-the-names-of-the-10-most-popular-applications-all-other-applications-are-designated-under-the-name-zpm).
 

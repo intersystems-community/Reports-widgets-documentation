@@ -21,7 +21,7 @@
 
 
 
-# List 1
+# Page 1
 _On this page we have all data about activity at last month._
 
 ## Total installs
@@ -92,7 +92,7 @@ _This chart show distribution of total installs by types of installation._
 
 Pie chart with [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs) in Show Values and [Container](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#container---shows-if-the-application-was-installed-in-Docker-container-or-directly-on-the-server-os) in Category.
 
-# List 2
+# Page 2
 
 _On this page we have data about activity last month related to the 2021 IRIS version._
 
@@ -163,7 +163,7 @@ _This chart show distribution of total installs of apps with IRIS 2021 version b
 
 Pie chart with [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs) in Show Values and [Container](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#container---shows-if-the-application-was-installed-in-Docker-container-or-directly-on-the-server-os) in Category.
 
-# List 3
+# Page 3
 _On this page we have all data about activity last month related to the 2021 IRIS version and installations in Docker containers._
 
 ## Total installs
@@ -232,7 +232,7 @@ _This chart show distribution of total installs of apps with IRIS 2021 version i
 
 Pie chart with [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs) in Show Values and [Container](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#container---shows-if-the-application-was-installed-in-Docker-container-or-directly-on-the-server-os) in Category.
 
-# List 4
+# Page 4
 _On this page we have all data about activity at last month related to only the 2021 IRIS version and installations directly on server OS._
 
 ## Total installs
@@ -303,7 +303,7 @@ _This chart show distribution of total installs of apps with IRIS 2021 version d
 
 Pie chart with [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs) in Show Values and [Container](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#container---shows-if-the-application-was-installed-in-Docker-container-or-directly-on-the-server-os) in Category.
  
-# List 5
+# Page 5
 _On this page we have charts that represent installation data for the last half a year._
 
 All  charts based on Query where the last month’s data is selected.
@@ -320,7 +320,7 @@ _This chart shows distribution of total installs by 10 most popular applications
 
 Chart has CountByTopName in Show Values and months in Series. Groups are swapped. CountByTopName is the summary of [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs) group by [TopName](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#topname---stores-the-names-of-the-10-most-popular-applications-all-other-applications-are-designated-under-the-name-zpm).
 
-# List 6
+# Page 6
 _On this page we have charts that represent installation data for the last half a year._
 
 All  charts based on Query where the last month’s data is selected 

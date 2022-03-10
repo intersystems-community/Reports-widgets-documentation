@@ -4,24 +4,24 @@ The Member has a Language field that lists all the languages he speaks. For each
 
 When we group this field by time period, we get the number of new users for that period   
 
-### MonthYear
+#### MonthYear
 Dates grouped by month are in MMM-yyyy format and are stored in a separate MonthYear dimension
-### MonthYearNum
+#### MonthYearNum
 Dates grouped by month are in yyyymm format and are stored in a separate MonthYearNum dimension
-### MonthYear custom sort
+#### MonthYear custom sort
 To display months in [MonthYear](https://github.com/teccod/Reports-widgets-documentation#monthyear)  in an appropriate way, we use custom sort by MonthYearNum in descending order in all charts and tables.
-### CurrDate
+#### CurrDate
 CurrDate is a Logi Function “return Today()”
-### FullDate
+#### FullDate
 FullDate is dimension where is the user registration date stored
-### m_post_id_count
+#### m_post_id_count
 Measure from AtScale, which count all posts id
 
-### group_post_sum
+#### group_post_sum
 group_post_sum is the Summary on [m_post_id_count](https://github.com/teccod/Reports-widgets-documentation#m_post_id_count) Group by [posts_lang](https://github.com/teccod/Reports-widgets-documentation#posts_lang)
-### posts_lang
+#### posts_lang
 posts_lang is the Formula to convert database post langs names in displayed in report
-### Post_date
+#### Post_date
 Post_date is the formula “FirstDayOfMonth(@posts_[FullDate](https://github.com/teccod/Reports-widgets-documentation#fulldate))”, another way to get the date of the MMM-yyyy format
 
 ## Page 2
@@ -321,17 +321,17 @@ Bar chart Questions summary in Show Values and QuestionType in Series. Only the 
 ## Page 11
 Views have another datasours – IRIS directly. Querry have the filter not to show data for current month.
 
-### New_Views_monthly
+#### New_Views_monthly
 
 This is summary which sum Delta group by Date, special function – for each month. This is the equivalent of [m_count_sum](https://github.com/teccod/Reports-widgets-documentation#m_count_sum) measures in the first datasours.  
-### posts_lang
+#### posts_lang
 
 This is formula to convert database post langs names displayed in report.  
-### Total_Views  
+#### Total_Views  
 
 This is summary which sum Delta group by Lang  
 
-### New Views
+#### New Views
 _New Views shows how many views were for the specified month for all publications_
 
 <details>

@@ -1,4 +1,6 @@
-## Used in report
+<details>
+<summary>Measures and dimensions</summary>
+
 ### m_count_sum
 The Member has a Language field that lists all the languages he speaks. For each of the languages there is a column in which 1 is set if this language is present in the user's languages. For each column, the number of these units is summed up in measure, for English it is m_countEN_sum, for other languages it is similar. We will refer to these measures by the common name m_count_sum.  
 
@@ -23,6 +25,8 @@ group_post_sum is the Summary on [m_post_id_count](https://github.com/teccod/Rep
 posts_lang is the Formula to convert database post langs names in displayed in report
 #### Post_date
 Post_date is the formula “FirstDayOfMonth(@posts_[FullDate](https://github.com/teccod/Reports-widgets-documentation#fulldate))”, another way to get the date of the MMM-yyyy format
+
+</details>
 
 ## Page 2
 ### New Members bar chart
@@ -321,6 +325,9 @@ Bar chart Questions summary in Show Values and QuestionType in Series. Only the 
 ## Page 11
 Views have another datasours – IRIS directly. Querry have the filter not to show data for current month.
 
+<details>
+<summary>Measures and dimensions</summary>
+
 #### New_Views_monthly
 
 This is summary which sum Delta group by Date, special function – for each month. This is the equivalent of [m_count_sum](https://github.com/teccod/Reports-widgets-documentation#m_count_sum) measures in the first datasours.  
@@ -330,6 +337,8 @@ This is formula to convert database post langs names displayed in report.
 #### Total_Views  
 
 This is summary which sum Delta group by Lang  
+
+</details>
 
 #### New Views
 _New Views shows how many views were for the specified month for all publications_

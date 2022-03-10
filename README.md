@@ -214,7 +214,7 @@ Growth percentage tables have formulas (Param_0 – Param_11)/ Param_0 for the y
 m_Count_sum – group of metrics, summing up all publications of their type.
 
 ### Articles line chart
-_Articles shows how many new articles were published per month_
+_Articles shows how many new articles were published per month. Articles are posts in which authors share their experience with InterSystem products, as well as various tips and tricks._
 
 <details>
 <summary>For developers</summary>
@@ -236,7 +236,7 @@ Crosstab with m_CountArticles_sum in summarys, [Post_date](https://github.com/te
 </details>
 
 ### Questions line chart
-_Questions shows how many new questions were published per month_
+_Questions shows how many new questions were published per month. Questions are posts in which community members ask questions about InterSystems products._
 
 <details>
 <summary>For developers</summary>
@@ -258,7 +258,7 @@ Crosstab with m_CountQuestions_sum in summarys, [Post_date](https://github.com/t
 
 ## Page 9
 ### Announcements line chart
-_Announcements shows how many new Announcements were published per month_
+_Announcements shows how many new Announcements were published per month. Announcements are posts that talk about community news. _
 
 <details>
 <summary>For developers</summary>
@@ -279,7 +279,7 @@ Crosstab with m_CountAnnouncement_sum in summarys, Post_date in Rows and [posts_
 </details>
 
 ### Discussions line chart
-_Discussions shows how many new discussions were published per month_
+_Discussions shows how many new discussions were published per month. Discussions are posts in which authors suggest a topic for discussion or ask members of the community to express their opinion on some issue._
 
 <details>
 <summary>For developers</summary>

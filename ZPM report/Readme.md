@@ -1,3 +1,6 @@
+<details>
+<summary>Measures and dimensions</summary>
+
 # Dimensions
 ### SystemVersionNumber - shows for which particular version of IRIS the application was installed.
 
@@ -18,8 +21,7 @@
 
 ### m_IP_distinct - stores the total number of IP addresses on which applications were installed.
 
-
-
+</details>
 
 # Page 1
 _On this page we have all data about activity at last month._
@@ -28,21 +30,39 @@ _On this page we have all data about activity at last month._
 
 _Amount of total installs of IRIS applications._
 
+<details>
+<summary>For developers</summary>
+
 Label displaying the parameter based on [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs) from which the last month’s data is selected. At the bottom of the label there is a label with data for the last 2 month. It displays a formula for displaying the name of the month and the parameter. The parameter is a copy of the one described above, but for a different period of time. 
+
+</details>
 
 ## Total modules
 
 _Amount of distinct apps that have been installed._
 
+<details>
+<summary>For developers</summary>
+
 Label displaying the parameter based on [m_Name_distinct](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_name_distinct---stores-the-total-number-of-applications-for-which-there-were-installations)  from which the last month’s data is selected. At the bottom of the label there is a label with data for the last 2 month. It displays a formula for displaying the name of the month and the parameter. The parameter is a copy of the one described above, but for a different period of time. 
+
+</details>
 
 ## Total hosts
 
 _Amount of distinct ip addresses from which apps were installed._
 
+<details>
+<summary>For developers</summary>
+
 Label displaying the parameter based on [m_IP_distinct](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_ip_distinct---stores-the-total-number-of-ip-addresses-on-which-applications-were-installed) from which the last month’s data is selected. At the bottom of the label there is a label with data for the last 2 month. It displays a formula for displaying the name of the month and the parameter. The parameter is a copy of the one described above, but for a different period of time. 
 
+</details>
+
 ## MTM formulas and YTY formulas
+
+<details>
+<summary>For developers</summary>
 
 	number percent;
 	number @now = parameter displayed above formula.
@@ -59,38 +79,64 @@ Label displaying the parameter based on [m_IP_distinct](https://github.com/tecco
 			{return ToText(Truncate(percent,1 )) + ' % MTM'}
 	}
 
+</details>
+
 # All tables and charts based on Query where the last month’s data is selected.
 
 ## Full Version table
 
 _This table show distribution of total installs by IRIS versions._
 
+<details>
+<summary>For developers</summary>
+
 Table with [SystemVersionNumber](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#systemversionnumber---shows-for-which-particular-version-of-iris-the-application-was-installed) and [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs) in Display, no Group, Filter in Query.
+
+</details>
 
 ## Name Table
 
 _This table show distribution of total installs by apps._
 
+<details>
+<summary>For developers</summary>
+
 Table with [Name](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#name---shows-the-name-of-the-application) and [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs) in Display, no Group, Filter in Query.
+
+</details>
 
 ## Country table
 
 _This table show distribution of total installs by countries._
 
+<details>
+<summary>For developers</summary>
+
 Table with [Country](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#country---shows-in-which-country-the-installation-was-made) and [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs) in Display, no Group, Filter in Query.
+
+</details>
 
 ## OS chart
 
 _This chart show distribution of total installs by OS._
 
+<details>
+<summary>For developers</summary>
+
 Pie chart with [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs) in Show Values and [SystemVersionOs](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#systemversionos---shows-on-which-os-the-application-was-installed) in Category.
 
+</details>
 
 ## Container chart
 
 _This chart show distribution of total installs by types of installation._
 
+<details>
+<summary>For developers</summary>
+
 Pie chart with [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs) in Show Values and [Container](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#container---shows-if-the-application-was-installed-in-Docker-container-or-directly-on-the-server-os) in Category.
+
+</details>
 
 # Page 2
 
@@ -100,21 +146,39 @@ _On this page we have data about activity last month related to the 2021 IRIS ve
 
 _Amount of total installs of IRIS 2021 applications._
 
+<details>
+<summary>For developers</summary>
+
 Label displaying the parameter based on m_Count_sum from which the last month’s data is selected and [SystemVersionNumber](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#systemversionnumber---shows-for-which-particular-version-of-iris-the-application-was-installed) contains 2021. At the bottom of the label there is a label with data for the last 2 month. It displays a formula for displaying the name of the month and the parameter. The parameter is a copy of the one described above, but for a different period of time. 
+
+</details>
 
 ## Total modules
 
 _Amount of distinct IRIS 2021 applications that have been installed._
 
+<details>
+<summary>For developers</summary>
+
 Label displaying the parameter based on [m_Name_distinct](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_name_distinct---stores-the-total-number-of-applications-for-which-there-were-installations)  from which the last month’s data is selected and [SystemVersionNumber](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#systemversionnumber---shows-for-which-particular-version-of-iris-the-application-was-installed) contains 2021. At the bottom of the label there is a label with data for the last 2 month. It displays a formula for displaying the name of the month and the parameter. The parameter is a copy of the one described above, but for a different period of time. 
+
+</details>
 
 ## Total hosts
 
 _Amount of distinct ip addresses from which IRIS 2021 applications were installed._
 
+<details>
+<summary>For developers</summary>
+
 Label displaying the parameter based on [m_IP_distinct](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_ip_distinct---stores-the-total-number-of-ip-addresses-on-which-applications-were-installed) from which the last month’s data is selected and [SystemVersionNumber](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#systemversionnumber---shows-for-which-particular-version-of-iris-the-application-was-installed) contains 2021. At the bottom of the label there is a label with data for the last 2 month. It displays a formula for displaying the name of the month and the parameter. The parameter is a copy of the one described above, but for a different period of time. 
 
+</details>
+
 ## MTM formulas and YTY formulas
+
+<details>
+<summary>For developers</summary>
 
 	number percent;
 	number @now = parameter displayed above formula.
@@ -131,37 +195,64 @@ Label displaying the parameter based on [m_IP_distinct](https://github.com/tecco
 			{return ToText(Truncate(percent,1 )) + ' % MTM'}
 	}
 
+</details>
+
 # All tables and charts based on Query that are filtered by MajorVersion (MajorVersion like 2021%) and the last month’s data is selected.
 
 ## Full Version table
 
 _This table show distribution of total installs by IRIS 2021 versions._
 
+<details>
+<summary>For developers</summary>
+
 Table with [SystemVersionNumber](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#systemversionnumber---shows-for-which-particular-version-of-iris-the-application-was-installed) and [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs)in Display, no Group, Filter in Query.
+
+</details>
 
 ## Name Table
 
 _This table show distribution of total installs by apps with IRIS 2021 version._
 
+<details>
+<summary>For developers</summary>
+
 Table with [Name](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#name---shows-the-name-of-the-application) and [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs)in Display, no Group, Filter in Query.
+
+</details>
 
 ## Country table
 
 _This table show distribution of total installs of apps with IRIS 2021 version by countries._
 
+<details>
+<summary>For developers</summary>
+
 Table with [Country](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#country---shows-in-which-country-the-installation-was-made) and [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs) in Display, no Group, Filter in Query.
+
+</details>
 
 ## OS chart
 
 _This chart show distribution of total installs of apps with IRIS 2021 version by OS._
 
+<details>
+<summary>For developers</summary>
+
 Pie chart with [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs) in Show Values and [SystemVersionOs](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#systemversionos---shows-on-which-os-the-application-was-installed) in Category.
+
+</details>
 
 ## Container chart
 
 _This chart show distribution of total installs of apps with IRIS 2021 version by types of installation._
 
+<details>
+<summary>For developers</summary>
+
 Pie chart with [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs) in Show Values and [Container](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#container---shows-if-the-application-was-installed-in-Docker-container-or-directly-on-the-server-os) in Category.
+
+</details>
 
 # Page 3
 _On this page we have all data about activity last month related to the 2021 IRIS version and installations in Docker containers._
@@ -170,21 +261,38 @@ _On this page we have all data about activity last month related to the 2021 IRI
 
 _Amount of total installs of IRIS 2021 applications in Docker containers._
 
+<details>
+<summary>For developers</summary>
 Label displaying the parameter based on [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs) from which the last month’s data is selected, [SystemVersionNumber](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#systemversionnumber---shows-for-which-particular-version-of-iris-the-application-was-installed) contains 2021 and [Container](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#container---shows-if-the-application-was-installed-in-Docker-container-or-directly-on-the-server-os) equal to “Docker”. At the bottom of the label there is a label with data for the last 2 month. It displays a formula for displaying the name of the month and the parameter. The parameter is a copy of the one described above, but for a different period of time. 
+
+</details>
 
 ## Total modules
 
 _Amount of distinct IRIS 2021 applications that have been installed in Docker containers._
 
+<details>
+<summary>For developers</summary>
+
 Label displaying the parameter based on [m_Name_distinct](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_name_distinct---stores-the-total-number-of-applications-for-which-there-were-installations)  from which the last month’s data is selected, [SystemVersionNumber](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#systemversionnumber---shows-for-which-particular-version-of-iris-the-application-was-installed) contains 2021 and [Container](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#container---shows-if-the-application-was-installed-in-Docker-container-or-directly-on-the-server-os) equal to “Docker”. At the bottom of the label there is a label with data for the last 2 month. It displays a formula for displaying the name of the month and the parameter. The parameter is a copy of the one described above, but for a different period of time. 
+
+</details>
 
 ## Total hosts
 
 _Amount of distinct ip addresses from which IRIS 2021 applications were installed in Docker containers._
 
+<details>
+<summary>For developers</summary>
+
 Label displaying the parameter based on [m_IP_distinct](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_ip_distinct---stores-the-total-number-of-ip-addresses-on-which-applications-were-installed) from which the last month’s data is selected, [SystemVersionNumber](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#systemversionnumber---shows-for-which-particular-version-of-iris-the-application-was-installed) contains 2021 and Container equal to “Docker”. At the bottom of the label there is a label with data for the last 2 month. It displays a formula for displaying the name of the month and the parameter. The parameter is a copy of the one described above, but for a different period of time. 
 
+</details>
+
 ## MTM formulas and YTY formulas
+
+<details>
+<summary>For developers</summary>
 
 	number percent;
 	number @now = parameter displayed above formula.
@@ -201,36 +309,63 @@ Label displaying the parameter based on [m_IP_distinct](https://github.com/tecco
 			{return ToText(Truncate(percent,1 )) + ' % MTM'}
 	}
 
+</details>
+
 # All tables and charts based on Query that are filtered by MajorVersion (MajorVersion like 2021%) and the last month’s data is selected, SystemVersionNumber contains 2021 and [Container](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#container---shows-if-the-application-was-installed-in-Docker-container-or-directly-on-the-server-os) equal to “Docker”.
 
 ## Full Version table
 
 _This table show distribution of total installs in Docker containers by IRIS 2021 versions._
- 
+
+<details>
+<summary>For developers</summary>
+
 Table with [SystemVersionNumber](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#systemversionnumber---shows-for-which-particular-version-of-iris-the-application-was-installed) and [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs) in Display, no Group, Filter in Query.
+
+</details>
 
 ## Name Table
 
 _This table show distribution of total installs in Docker containers by apps with IRIS 2021 version._
 
+<details>
+<summary>For developers</summary>
+
 Table with [Name](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#name---shows-the-name-of-the-application) and [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs) in Display, no Group, Filter in Query.
+
+</details>
 
 ## Country table
 _This table show distribution of total installs of apps with IRIS 2021 version in Docker containers  by countries._
 
+<details>
+<summary>For developers</summary>
+
 Table with [Country](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#country---shows-in-which-country-the-installation-was-made) and [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs) in Display, no Group, Filter in Query.
+
+</details>
 
 ## OS chart
 
 _This chart show distribution of total installs  of apps with IRIS 2021 version in Docker containers by OS._
 
+<details>
+<summary>For developers</summary>
+
 Pie chart with [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs) in Show Values and [SystemVersionOs](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#systemversionos---shows-on-which-os-the-application-was-installed) in Category.
+
+</details>
 
 ## Container chart
 
 _This chart show distribution of total installs of apps with IRIS 2021 version in Docker containers by types of installation._
 
+<details>
+<summary>For developers</summary>
+
 Pie chart with [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs) in Show Values and [Container](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#container---shows-if-the-application-was-installed-in-Docker-container-or-directly-on-the-server-os) in Category.
+
+</details>
 
 # Page 4
 _On this page we have all data about activity at last month related to only the 2021 IRIS version and installations directly on server OS._
@@ -239,21 +374,39 @@ _On this page we have all data about activity at last month related to only the 
 
 _Amount of total installs of IRIS 2021 applications directly on server OS._
 
+<details>
+<summary>For developers</summary>
+
 Label displaying the parameter based on [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs) from which the last month’s data is selected, [SystemVersionNumber](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#systemversionnumber---shows-for-which-particular-version-of-iris-the-application-was-installed) contains 2021 and [Container](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#container---shows-if-the-application-was-installed-in-Docker-container-or-directly-on-the-server-os) equal to “Server”. At the bottom of the label there is a label with data for the last 2 month. It displays a formula for displaying the name of the month and the parameter. The parameter is a copy of the one described above, but for a different period of time. 
+
+</details>
 
 ## Total modules
 
 _Amount of distinct IRIS 2021 applications that have been installed directly on server OS._
 
+<details>
+<summary>For developers</summary>
+
 Label displaying the parameter based on [m_Name_distinct](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_name_distinct---stores-the-total-number-of-applications-for-which-there-were-installations)  from which the last month’s data is selected, [SystemVersionNumber](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#systemversionnumber---shows-for-which-particular-version-of-iris-the-application-was-installed) contains 2021 and [Container](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#container---shows-if-the-application-was-installed-in-Docker-container-or-directly-on-the-server-os) equal to “Server”. At the bottom of the label there is a label with data for the last 2 month. It displays a formula for displaying the name of the month and the parameter. The parameter is a copy of the one described above, but for a different period of time. 
+
+</details>
 
 ## Total hosts
 
 _Amount of distinct ip addresses from which IRIS 2021 applications were installed directly on server OS._
 
+<details>
+<summary>For developers</summary>
+
 Label displaying the parameter based on [m_IP_distinct](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_ip_distinct---stores-the-total-number-of-ip-addresses-on-which-applications-were-installed) from which the last month’s data is selected, [SystemVersionNumber](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#systemversionnumber---shows-for-which-particular-version-of-iris-the-application-was-installed) contains 2021 and [Container](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#container---shows-if-the-application-was-installed-in-Docker-container-or-directly-on-the-server-os) equal to “Server”. At the bottom of the label there is a label with data for the last 2 month. It displays a formula for displaying the name of the month and the parameter. The parameter is a copy of the one described above, but for a different period of time. 
 
+</details>
+
 ## MTM formulas and YTY formulas
+
+<details>
+<summary>For developers</summary>
 
 	number percent;
 	number @now = parameter displayed above formula.
@@ -270,39 +423,65 @@ Label displaying the parameter based on [m_IP_distinct](https://github.com/tecco
 			{return ToText(Truncate(percent,1 )) + ' % MTM'}
 	}
 
+</details>
+
 # All tables and charts based on Query that are filtered by MajorVersion (MajorVersion like 2021%) and the last month’s data is selected, SystemVersionNumber contains 2021 and [Container](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#container---shows-if-the-application-was-installed-in-Docker-container-or-directly-on-the-server-os) equal to “Server”.
 
 ## Full Version table
 
 _This table show distribution of total installs directly on server OS by IRIS 2021 versions._
- 
+
+<details>
+<summary>For developers</summary>
+
 Table with [SystemVersionNumber](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#systemversionnumber---shows-for-which-particular-version-of-iris-the-application-was-installed) and [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs)in Display, no Group, Filter in Query.
 
+</details>
 
 ## Name Table
 
 _This table show distribution of total installs directly on server OS  by apps with IRIS 2021 version._
 
+<details>
+<summary>For developers</summary>
+
 Table with [Name](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#name---shows-the-name-of-the-application) and [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs) in Display, no Group, Filter in Query.
+
+</details>
 
 ## Country table
 
 _This table show distribution of total installs directly on server OS of apps with IRIS 2021 version by countries._
 
+<details>
+<summary>For developers</summary>
+
 Table with [Country](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#country---shows-in-which-country-the-installation-was-made) and [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs) in Display, no Group, Filter in Query.
+
+</details>
 
 ## OS chart
 
 _This chart show distribution of total installs  of apps with IRIS 2021 version directly on server OS by OS._
 
+<details>
+<summary>For developers</summary>
+
 Pie chart with [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs) in Show Values and [SystemVersionOs](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#systemversionos---shows-on-which-os-the-application-was-installed) in Category.
+
+</details>
 
 ## Container chart
 
 _This chart show distribution of total installs of apps with IRIS 2021 version directly on server OSby types of installation._
 
+<details>
+<summary>For developers</summary>
+
 Pie chart with [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs) in Show Values and [Container](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#container---shows-if-the-application-was-installed-in-Docker-container-or-directly-on-the-server-os) in Category.
- 
+
+</details>
+
 # Page 5
 _On this page we have charts that represent installation data for the last half a year._
 
@@ -312,13 +491,23 @@ All  charts based on Query where the last month’s data is selected.
 
 _This chart shows the number total installs._
 
+<details>
+<summary>For developers</summary>
+
 Chart has m_Count_sum_summary in Show Values. m_Count_sum_summary is the summary of [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs) group by [TopName](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#topname---stores-the-names-of-the-10-most-popular-applications-all-other-applications-are-designated-under-the-name-zpm).
+
+</details>
 
 ## Top applications installs bar chart
 
 _This chart shows distribution of total installs by 10 most popular applications. Other on chart represents all other applications._
 
+<details>
+<summary>For developers</summary>
+
 Chart has CountByTopName in Show Values and months in Series. Groups are swapped. CountByTopName is the summary of [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs) group by [TopName](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#topname---stores-the-names-of-the-10-most-popular-applications-all-other-applications-are-designated-under-the-name-zpm).
+
+</details>
 
 # Page 6
 _On this page we have charts that represent installation data for the last half a year._
@@ -329,10 +518,19 @@ All  charts based on Query where the last month’s data is selected
 
 _This chart shows distribution of total installs by installation type (Docker container or server OS)._
 
+<details>
+<summary>For developers</summary>
+
 Chart has CountContainer in Show Values and months in Series. Groups are swapped. CountContainer is the summary of [m_Count_sum](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_count_sum---stores-the-total-number-of-installs) group by [Container](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#container---shows-if-the-application-was-installed-in-Docker-container-or-directly-on-the-server-os).
 
+</details>
 ## Hosts Monthly bar chart
 
 _This chart shows the number of ip addresses on which applications were installed._
 
+<details>
+<summary>For developers</summary>
+
 Shart has [m_IP_distinct](https://github.com/teccod/Reports-widgets-documentation/blob/main/ZPM%20report/readme.md#m_ip_distinct---stores-the-total-number-of-ip-addresses-on-which-applications-were-installed) in Show Values and months in Category.
+
+</details>

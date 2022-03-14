@@ -28,9 +28,17 @@ Post_date is the formula “FirstDayOfMonth(@posts_[FullDate](https://github.com
 
 </details>
 
+### _Members_
+
+_A member counts in every community in which (s)he participates. All members participate in the English community. Members who have been banned from the portal do not count._
+
+### _Posts_
+
+_Posts are anything that is posted on the community site in the posts section. Only published posts that have not been deleted from the portal are taken into account. Digest posts are also not taken into account._
+
 ## Page 2
 ### New Members bar chart
-_A member counts in every community in which (s)he participates. All members participate in the English community. New members are counted as users who registered this month and can be counted in multiple communities at once._
+_New members are counted as users who registered this month and can be counted in multiple communities at once._
 
 <details>
 <summary>For developers</summary>

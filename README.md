@@ -38,7 +38,7 @@ _Posts are anything that is posted on the community site in the posts section. O
 
 ## Page 2
 ### New Members bar chart
-_New members are counted as users who registered this month and can be counted in multiple communities at once._
+_New [members](https://github.com/teccod/Reports-widgets-documentation/blob/main/README.md#members) are counted as users who registered this month and can be counted in multiple communities at once._
 
 <details>
 <summary>For developers</summary>
@@ -53,7 +53,7 @@ Built in a similar way: measures [m_count_sum](https://github.com/teccod/Reports
 
 ## Page 3
 ### Total Members
-_Total Members shows the number of all community members by the end of the month_
+_Total [Members](https://github.com/teccod/Reports-widgets-documentation/blob/main/README.md#members) shows the number of all community members by the end of the month_
 
 <details>
 <summary>For developers</summary>
@@ -79,7 +79,7 @@ So functions are in Show Values, [MonthYear](https://github.com/teccod/Reports-w
 
 
 ### Total Members All Time
-_Total Members All Time shows the number of all members of the community at the current moment_
+_Total [Members](https://github.com/teccod/Reports-widgets-documentation/blob/main/README.md#members) All Time shows the number of all members of the community at the current moment_
 
 <details>
 <summary>For developers</summary>
@@ -94,7 +94,7 @@ KPI for the chart shows the number of English users, as all users belong to this
 
 ## Page 4
 ### Total Members for last year
-_Total Members for last year show the number of community members registered in previous 12 months_
+_Total [Members](https://github.com/teccod/Reports-widgets-documentation/blob/main/README.md#members) for last year show the number of community members registered in previous 12 months_
 
 <details>
 <summary>For developers</summary>
@@ -124,7 +124,7 @@ In this tables MonthYear is in Group to have a group that is needed to avoid thi
 
 ## Page 5
 ### New Posts bar chart
-_New Posts shows how many new posts were published per month_
+_New [Posts](https://github.com/teccod/Reports-widgets-documentation/blob/main/README.md#posts) shows how many new posts were published per month_
 
 <details>
 <summary>For developers</summary>
@@ -142,7 +142,7 @@ Crosstab with [m_post_id_count](https://github.com/teccod/Reports-widgets-docume
 
 ## Page 6
 ### Total Posts
-_Running Total Posts of any type shows how many posts were published for the entire period until the end of the specified month_
+_Running Total [Posts](https://github.com/teccod/Reports-widgets-documentation/blob/main/README.md#posts) of any type shows how many posts were published for the entire period until the end of the specified month_
 
 <details>
 <summary>For developers</summary>
@@ -174,7 +174,7 @@ In Y axes format minimum and maximum values edited to improve the visual of the 
 </details>
 
 ### Total Posts All Time
-_Total Posts shows how many posts were published for the entire period until the end of the current month_
+_Total [Posts](https://github.com/teccod/Reports-widgets-documentation/blob/main/README.md#posts) All Time shows how many posts were published for the entire period until the end of the current month_
 
 <details>
 <summary>For developers</summary>
@@ -194,7 +194,7 @@ Table with [posts_lang](https://github.com/teccod/Reports-widgets-documentation#
 
 ## Page 7
 ### Total Posts for last year
-_Total Posts shows how many posts were published in the last 12 months_
+_Total [Posts] (https://github.com/teccod/Reports-widgets-documentation/blob/main/README.md#posts) for last year shows how many posts were published in the last 12 months_
 
 <details>
 <summary>For developers</summary>
@@ -222,7 +222,7 @@ Growth percentage tables have formulas (Param_0 – Param_11)/ Param_0 for the y
 m_Count_sum – group of metrics, summing up all publications of their type.
 
 ### Articles line chart
-_Articles shows how many new articles were published per month. Articles are posts in which authors share their experience with InterSystem products, as well as various tips and tricks._
+_Articles shows how many new articles were published per month. Articles are [posts](https://github.com/teccod/Reports-widgets-documentation/blob/main/README.md#posts) in which authors share their experience with InterSystem products, as well as various tips and tricks._
 
 <details>
 <summary>For developers</summary>
@@ -244,7 +244,7 @@ Crosstab with m_CountArticles_sum in summarys, [Post_date](https://github.com/te
 </details>
 
 ### Questions line chart
-_Questions shows how many new questions were published per month. Questions are posts in which community members ask questions about InterSystems products._
+_Questions shows how many new questions were published per month. Questions are [posts](https://github.com/teccod/Reports-widgets-documentation/blob/main/README.md#posts) in which community members ask questions about InterSystems products._
 
 <details>
 <summary>For developers</summary>
@@ -266,7 +266,7 @@ Crosstab with m_CountQuestions_sum in summarys, [Post_date](https://github.com/t
 
 ## Page 9
 ### Announcements line chart
-_Announcements shows how many new Announcements were published per month. Announcements are posts that talk about community news. _
+_Announcements shows how many new Announcements were published per month. Announcements are [posts](https://github.com/teccod/Reports-widgets-documentation/blob/main/README.md#posts) that talk about community news._
 
 <details>
 <summary>For developers</summary>
@@ -287,7 +287,7 @@ Crosstab with m_CountAnnouncement_sum in summarys, Post_date in Rows and [posts_
 </details>
 
 ### Discussions line chart
-_Discussions shows how many new discussions were published per month. Discussions are posts in which authors suggest a topic for discussion or ask members of the community to express their opinion on some issue._
+_Discussions shows how many new discussions were published per month. Discussions are [posts](https://github.com/teccod/Reports-widgets-documentation/blob/main/README.md#posts) in which authors suggest a topic for discussion or ask members of the community to express their opinion on some issue._
 
 <details>
 <summary>For developers</summary>

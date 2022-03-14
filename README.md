@@ -194,7 +194,7 @@ Table with [posts_lang](https://github.com/teccod/Reports-widgets-documentation#
 
 ## Page 7
 ### Total Posts for last year
-_Total [Posts] (https://github.com/teccod/Reports-widgets-documentation/blob/main/README.md#posts) for last year shows how many posts were published in the last 12 months_
+_Total [Posts](https://github.com/teccod/Reports-widgets-documentation/blob/main/README.md#posts) for last year shows how many posts were published in the last 12 months_
 
 <details>
 <summary>For developers</summary>

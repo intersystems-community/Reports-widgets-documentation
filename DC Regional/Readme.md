@@ -108,6 +108,12 @@ return (Year(a) * 100) + Month(a)
 
  </details>
 
+## General information
+
+Any registered user who has been active in the community is counted as a member of the community. A user can be a member of several communities at the same time.
+
+Removed data about unpublished and deleted posts, as well as Digest type posts from data about posts and their views.
+
 ## Page 2
 
 ### Members Total table

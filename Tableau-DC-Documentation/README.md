@@ -64,63 +64,63 @@ Filter: [default](https://github.com/teccod/Reports-widgets-documentation/edit/m
 ### Contributors Monthly bar charts	
 Bar chart with [new contributed members](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#contributed-members) for [months](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#monthyear). Down below the same measure but filtered by [ISC Members](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#isc-members) on the different bar charts.
 
-Filter: [default](url)
+Filter: [default](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#default-filter)
 
 # Posts by
 ### Posting Contribution
-New [Comments](url) and [Posts](url) for the [month](url).
+New [Comments](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#comments) and [Posts](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#posts) for the [month](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#fulldateposts).
 
-Filter: [Date](url) for last 6 months
+Filter: [Date](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#fulldateposts) for last 6 months
 
 ### Postings By type 
-[New Posts](url) broken down by [Posts type](url) for [months](url).
+[New Posts](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#posts) broken down by [Posts type](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#posttype) for [months](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#fulldateposts).
 
-Filter: [Date](url) for last 6 months
+Filter: [Date](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#fulldateposts) for last 6 months
 
 ### Posts By Groups 
-The [new posts](url) are broken down by Tags for [month](url). Each value is a separate column, grouped in a month.
-Values:  [TagCache](url), [TagEnsemble](url), [TagHealthShare](url), [TagIRIS](url)
-Filter: [Date](url) for last 6 months
+The [new posts](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#posts) are broken down by Tags for [month](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#fulldateposts). Each value is a separate column, grouped in a month.
+Values:  [TagCache](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#tagcache), [TagEnsemble](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#tagensemble), [TagHealthShare](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#taghealthshare), [TagIRIS](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#tagiris)
+Filter: [Date](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#fulldateposts) for last 6 months
 
 # Articles and Questions
 
 ### Articles by InterSystems And Customers breakdown
-[Articles](url) broken by [ISC Members](url) for [months](url).
+[Articles](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#articles) broken by [ISC Members](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#isc-members-posts) for [months](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#fulldateposts).
 
-Filter: [Date](url) for last 6 months
+Filter: [Date](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#fulldateposts) for last 6 months
 
 ### Questions by InterSystems and Customers Breakdown
-[Questions](url) broken by [ISC Members](url) for months.
+[Questions](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#questions) broken by [ISC Members](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#isc-members-posts) for months.
 
-Filter: [Date](url) for last 6 months
+Filter: [Date](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#fulldateposts) for last 6 months
 
 ### Customers Weekly Contribution Level in Questions
-[Questions](url) for weeks.
+[Questions](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#questions) for weeks.
 
-Filter. [Date](url) for last 6 months
+Filter. [Date](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#fulldateposts) for last 6 months
 
 # Comments, Answers, Questions
 ### Comments and Answers
-[Comments Contribution](url) broken down by [ISC category](url) for [months](url).
+[Comments Contribution](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#commentscontribution) broken down by [ISC category](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#isc-members-posts) for [months](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#monthyearposts).
 
-Filter: [default](url).
+Filter: [default](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#default-filter).
 
 ### Questions situation
-Circle plot with [Questions](url) broken by [comments type](url).
+Circle plot with [Questions](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#questions) broken by [comments type](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#commentsamounttype).
 
 Filter: None
 
 ### Questions Over Time
-Circle plot with [Questions](url) broken by [comments type](url) for months.
+Circle plot with [Questions](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#questions) broken by [comments type](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#commentsamounttype) for months.
 
-Filter. [Date](url) for last 6 months
+Filter. [Date](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#fulldateposts) for last 6 months
 
 # Contribution dashboard
 This dashboard presents a table with information about posts in the last 2 months, growth, growth compared to last year in the same month and the average value.
 
 Since this table consists of several sheets, we will indicate an explanation for each:
-  1. The first view contains fields with [New Posts](url), [New Articles](url), [New Questions](url),  [Comments Contribution](url), [Post Per Day](url), [Comments Per Day](url) for the last 2 months . 
-  2. Growth is the same formula as [here](url), but for each value separately.
+  1. The first view contains fields with [New Posts](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#posts), [New Articles](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#articles), [New Questions](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#questions),  [Comments Contribution](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#commentscontribution), [Post Per Day](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#postperday), [Comments Per Day](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#commentsperday) for the last 2 months . 
+  2. Growth is the same formula as [here](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#growth-members), but for each value separately.
   3. Growth% is Growth / Value   (for example [Growth for Post] / Posts ) for last month.
 
 Since the formulas are calculated based on data displayed in the table, all that is required to display the same values year to year is to change the filter. The formulas remain the same.
@@ -128,40 +128,40 @@ Since the formulas are calculated based on data displayed in the table, all that
 Monthly Average it’s Total Summarize, the inner tool of Tableau. We created a table, just like the first one with all data, then created a total row with avg aggregation and hide other data.
 
 # Contribution dashboard (C) and Contribution dashboard (I)
-These two dashboards are the same as [Contribution dashboard](url), only that they have an "ISC Members" page. In this way  we can use one dashboard for each Member. 
+These two dashboards are the same as [Contribution dashboard](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#contribution-dashboard), only that they have an "ISC Members" page. In this way  we can use one dashboard for each Member. 
 Each view is a copy of "Contribution dashboard" sheets. 
 
 # Best Contributors dashboard
 ### Best Contributors Total
-Top 15 [Members](url) by [Total Points](url). 
+Top 15 [Members](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#members) by [Total Points](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#totalpointsmonth). 
 
 ### Best Contributors C
-Top 15 Customers [Members](url) by [Points](url) for last month
+Top 15 Customers [Members](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#members) by [Points](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#points) for last month
 
 ### Best Contributors I
-Top 15 Intersystems [Members](url) by [Points](url) for last month
+Top 15 Intersystems [Members](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#members) by [Points](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#points) for last month
 
 ### Best contributors plot
-Vertical bar chart plot with combined [Views](url), [Posts](url), [Posts Votes](url), [Favorites](url), [Comments](url), [Comments Votes](url) per Members.
+Vertical bar chart plot with combined [Views](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#views), [Posts](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#posts), [Posts Votes](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#postvotes), [Favorites](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#favorites), [Comments](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#comments), [Comments Votes](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#commentvotes) per Members.
 
-Filter: Last [Month](url), Descending by values.
+Filter: Last [Month](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#monthyearposts), Descending by values.
 
 # Views plots
 ### Content Consumption Views by Content Type 2
-Bar chart for [New views](url) broken by [type](url) (Article, Question) for [month](url).
-Filter: Like [default](url), but with [MonthYearNumView](url)
+Bar chart for [New views](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#viewsdelta) broken by [type](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#posttypeview) (Article, Question) for [month](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#monthyearview).
+Filter: Like [default](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#default-filter), but with [MonthYearNumView](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#monthyearnumview)
 
 ### Unique Views Per Every Post
-Bar chart with [Avg Views](url) for [month](url)
+Bar chart with [Avg Views](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#viewsavg) for [month](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#monthyearview)
 
 ### Total Views Monthly
-Bar chart of [Total Views](url) for [month](url)
+Bar chart of [Total Views](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#totalviewsmonth) for [month](url)
 
-Filter: like [default](url), but with [MonthYearView](url).
+Filter: like [default](url), but with [MonthYearView](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#monthyearview).
 
 ### Total Views Monthly: Caché, Ensemble, HealthShare, IRIS
-Bar chart withViews for Tags ([Cache](url), [Ensemble](url), [HealthShare](url), [IRIS](url)) grouped by [month](url).
-Filter: [default](url), but with MonthYearNumView
+Bar chart withViews for Tags ([Cache](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#cachedelta), [Ensemble](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#ensembledelta), [HealthShare](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#healthsharedelta), [IRIS](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#irisdelta)) grouped by [month](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#monthyearview).
+Filter: [default](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#default-filter), but with [MonthYearNumView](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#monthyearnumview)
 
 
 # Members  Measures
@@ -275,6 +275,15 @@ String with type of post.
       - ARTICLE
       - DISCUSSION
       - QUESTION
+
+### ISC Members Posts
+String with type of member.
+
+  - Remote column: [Members].[ISCMembers]
+  - Remote type: ANSI/MBCS character string
+  - Domain (2 members):
+    - Customers
+    - InterSystems
 
 ### MonthYearPosts
 Post creation month in MMM-YYYY format. 

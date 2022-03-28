@@ -22,7 +22,7 @@ The table shows [Total Members](https://github.com/teccod/Reports-widgets-docume
 
 Filters: [default](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#default-filter).
 
-## Members totals bar chart
+## Members Total bar chart
 Bar chart of [Total Members](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#total-members) for [Month](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#monthyear).
 
 Filters: [default](https://github.com/teccod/Reports-widgets-documentation/edit/main/Tableau-DC-Documentation/README.md#default-filter).

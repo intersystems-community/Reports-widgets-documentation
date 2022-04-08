@@ -289,9 +289,9 @@ Points are the sum of the following:
 
 _This chart shows the distribution of points of the most active members of the community by category._
 
-### Best Contributors Ever
+### Customers
 
-_This chart shows the most active community members of all time._
+_This table shows the most active community members of all time._
 
 ## Page 11
 

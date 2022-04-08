@@ -228,7 +228,7 @@ _This chart shows a breakdown of the number of new Articles per month by author 
 
 ## Page 7
 
-### Questions ny InterSystems and Customers Breakdown
+### Questions by InterSystems and Customers Breakdown
 
 _This chart shows a breakdown of the number of new Questions per month by author status: InterSystems employee or customer._  
 

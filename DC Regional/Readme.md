@@ -29,21 +29,72 @@
 - MemberMonthTotal - the sum of all members for the entire period up to a certain month.
    ```
    Sum([DateDimension].[DateDimension].CurrentMember.FirstChild : 
-       [DateDimension].[DateDimension].CurrentMember,[Measures].[m_ID_distinct])
+	[DateDimension].[DateDimension].CurrentMember,[Measures].[m_ID_distinct])
    ```
  
 - CustomersTotalMonthly - the sum of Customers Members for the entire period up to a certain month.
    ```
    Sum([DateDimension].[DateDimension].CurrentMember.FirstChild : 
-       [DateDimension].[DateDimension].CurrentMember,[Measures].[m_MemberCustomers_sum])
+	[DateDimension].[DateDimension].CurrentMember,[Measures].[m_MemberCustomers_sum])
    ```
 
 - InterSystemsTotalMonthly - the sum of InterSystems members for the entire period up to a certain month.
    ```
    Sum([DateDimension].[DateDimension].CurrentMember.FirstChild : 
-       [DateDimension].[DateDimension].CurrentMember,[Measures].[m_MembersInterSystems_sum])
+	[DateDimension].[DateDimension].CurrentMember,[Measures].[m_MembersInterSystems_sum])
    ```
- 
+
+## Views cube
+
+### Dimensions
+- MonthYear
+- MonthYearNum
+- YearView
+- NamePost
+- Tags
+- LinkPost
+- PostType
+
+### Measures
+- m_CacheTag_sum
+- m_EnsembleTag_sum
+- m_HealthShareTag_sum
+- m_InterSystemsIRISTag_sum
+- m_Views_avg
+- m_Delta_sum
+- m_Views_sum
+
+### Calculated Measures
+- MTM_Delta_num
+  ```
+  [Measures].[m_Delta_sum] - ([DateDimensionView].[DateDimensionView].CurrentMember.PrevMember,[Measures].[m_Delta_sum])
+  ```
+  
+- MTM_Delta_percent
+  ```
+  Divide(([Measures].[m_Delta_sum] -
+	([DateDimensionView].[DateDimensionView].CurrentMember.PrevMember,[Measures].[m_Delta_sum])), 
+	([DateDimensionView].[DateDimensionView].CurrentMember.PrevMember,[Measures].[m_Delta_sum]), 0)
+  ```
+	
+- MTM_ViewsAVG_num
+  ```
+  [Measures].[m_Views_avg] - ([DateDimensionView].[DateDimensionView].CurrentMember.PrevMember,[Measures].[m_Views_avg])
+  ```
+	
+- MTM_ViewsAVG_percent
+  ```
+  Divide(([Measures].[m_Views_avg] - 
+	([DateDimensionView].[DateDimensionView].CurrentMember.PrevMember,[Measures].[m_Views_avg])), 
+	([DateDimensionView].[DateDimensionView].CurrentMember.PrevMember,[Measures].[m_Views_avg]), 0)
+  ```
+
+- TotalViewsMonth
+  ```
+  Sum([DateDimensionView].[DateDimensionView].CurrentMember.FirstChild : 
+	[DateDimensionView].[DateDimensionView].CurrentMember,[Measures].[m_Delta_sum])
+  ```
+
 ## Posts cube
 
 ### Dimensions
@@ -80,25 +131,25 @@
 - TotalArticlesMonth - the sum of InterSystems members for the entire period up to a certain month.
   ```
   Sum([DateDimensionPosts].[DateDimensionPosts].CurrentMember.FirstChild : 
-      [DateDimensionPosts].[DateDimensionPosts].CurrentMember,[Measures].[m_CountArticle_sum])
+	[DateDimensionPosts].[DateDimensionPosts].CurrentMember,[Measures].[m_CountArticle_sum])
   ```
  
 - TotalPostsMonth - 
   ```
   Sum([DateDimensionPosts].[DateDimensionPosts].CurrentMember.FirstChild : 
-      [DateDimensionPosts].[DateDimensionPosts].CurrentMember,[Measures].[m_ID_distinct])
+	[DateDimensionPosts].[DateDimensionPosts].CurrentMember,[Measures].[m_ID_distinct])
   ```
  
 - TotalQuestionsMonth - 
   ```
   Sum([DateDimensionPosts].[DateDimensionPosts].CurrentMember.FirstChild : 
-      [DateDimensionPosts].[DateDimensionPosts].CurrentMember,[Measures].[m_CountQuestions_sum])
+	[DateDimensionPosts].[DateDimensionPosts].CurrentMember,[Measures].[m_CountQuestions_sum])
   ```
 
 - TotalViewsMonth - 
   ```
   Sum([MonthYearView].[MonthYearView].CurrentMember.FirstChild : 
-      [MonthYearView].[MonthYearView].CurrentMember,[Measures].[m_Delta_sum])
+	[MonthYearView].[MonthYearView].CurrentMember,[Measures].[m_Delta_sum])
   ```
  
 ### Formula field
@@ -146,7 +197,6 @@
   ```
   @views_MonthYearNum <> @CurrentMonth
   ```
-
 </details>
 
 ## General information

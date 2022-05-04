@@ -93,6 +93,31 @@
 	[DateDimensionView].[DateDimensionView].CurrentMember,[Measures].[m_Delta_sum])
 	```
 
+## Views cube
+
+### Dimensions
+- YearContributors
+- ISCMember
+- ISCMemberStr
+- FullDateContribution
+- MonthYear
+- MonthYearNum
+- Name
+- Link
+- Email
+	
+### Measures
+- m_Comments_sum
+- m_CommentsAmount_sum
+- m_CommentVotes_sum
+- m_Member_distinct
+- m_PostFavs_sum
+- m_Overall_sum
+- m_Posts_sum
+- m_PostVotes_sum
+- m_Views_sum
+	
+	
 ## Posts cube
 
 ### Dimensions

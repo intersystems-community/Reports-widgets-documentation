@@ -6,43 +6,41 @@
 ### Dimensions
 - MonthYear - (String) user registration date in the Mon-YYYY format.  
 - MonthYearNum - (Int) user registration date in the MMMYYYY format.
-- FullDate - (Date) user registration date.
-- MonthYearContribution - 
-- MonthYearNumContribution - 
-- AuthorName - (String) user name.
+- FullDateMember - (Date) user registration date.
+- Email - (String) user email.
+- Name - (String) user name.
+- Link - (String) link to user profile. 
 - ISCMember - (Bool) whether the user is an employee of the InterSystems.
+- ISCMemberStr - (String) string type of user status InterSystems or Customers.
 
 ### Measures
 - m_ID_distinct - number of members. 
-- m_Views_avg - Average views among Contributed members. 
-- m_Comments_sum - number of comments.
 - m_Member_distinct - Number of Contributed Members. 
-- m_CommentsAmount_sum - 
-- m_CommentVotes_sum -  number of likes on all comments of the posts. 
 
 ### Calculated Measures
 - ISCMemberStr - string representation of dimension ISCMember (InterSystems, Customers).
-   ```
-   CASE WHEN ISCMember = 1 THEN 'InterSystems' ELSE 'Customers' 
-   ```
+	```
+	CASE WHEN ISCMember = 1 THEN 'InterSystems' ELSE 'Customers' 
+	```
  
-- MemberMonthTotal - the sum of all members for the entire period up to a certain month.
-   ```
-   Sum([DateDimension].[DateDimension].CurrentMember.FirstChild : 
-	[DateDimension].[DateDimension].CurrentMember,[Measures].[m_ID_distinct])
-   ```
- 
-- CustomersTotalMonthly - the sum of Customers Members for the entire period up to a certain month.
-   ```
-   Sum([DateDimension].[DateDimension].CurrentMember.FirstChild : 
-	[DateDimension].[DateDimension].CurrentMember,[Measures].[m_MemberCustomers_sum])
-   ```
-
-- InterSystemsTotalMonthly - the sum of InterSystems members for the entire period up to a certain month.
-   ```
-   Sum([DateDimension].[DateDimension].CurrentMember.FirstChild : 
-	[DateDimension].[DateDimension].CurrentMember,[Measures].[m_MembersInterSystems_sum])
-   ```
+- TotalMemberMonth - the sum of all members for the entire period up to a certain month.
+	```
+	Sum([DateDimensionMember].[DateDimensionMember].CurrentMember.FirstChild : 
+	[DateDimensionMember].[DateDimensionMember].CurrentMember,[Measures].[m_ID_distinct])
+	```
+	
+- MTM_Members_num - 
+	```
+	[Measures].[TotalMemberMonth] - 
+		([DateDimensionMember].[DateDimensionMember].CurrentMember.PrevMember,[Measures].[TotalMemberMonth])
+	```
+	
+- MTM_Members_percent - 
+	```
+	Divide(([Measures].[TotalMemberMonth] - 
+		([DateDimensionMember].[DateDimensionMember].CurrentMember.PrevMember,[Measures].[TotalMemberMonth])), 
+		([DateDimensionMember].[DateDimensionMember].CurrentMember.PrevMember,[Measures].[TotalMemberMonth]), 0)
+	```
 
 ## Views cube
 
@@ -66,65 +64,79 @@
 
 ### Calculated Measures
 - MTM_Delta_num
-  ```
-  [Measures].[m_Delta_sum] - ([DateDimensionView].[DateDimensionView].CurrentMember.PrevMember,[Measures].[m_Delta_sum])
-  ```
+	```
+	[Measures].[m_Delta_sum] - ([DateDimensionView].[DateDimensionView].CurrentMember.PrevMember,[Measures].[m_Delta_sum])
+	```
   
 - MTM_Delta_percent
-  ```
-  Divide(([Measures].[m_Delta_sum] -
+	```
+	Divide(([Measures].[m_Delta_sum] -
 	([DateDimensionView].[DateDimensionView].CurrentMember.PrevMember,[Measures].[m_Delta_sum])), 
 	([DateDimensionView].[DateDimensionView].CurrentMember.PrevMember,[Measures].[m_Delta_sum]), 0)
-  ```
+	```
 	
 - MTM_ViewsAVG_num
-  ```
-  [Measures].[m_Views_avg] - ([DateDimensionView].[DateDimensionView].CurrentMember.PrevMember,[Measures].[m_Views_avg])
-  ```
+	```
+	[Measures].[m_Views_avg] - ([DateDimensionView].[DateDimensionView].CurrentMember.PrevMember,[Measures].[m_Views_avg])
+	```
 	
 - MTM_ViewsAVG_percent
-  ```
-  Divide(([Measures].[m_Views_avg] - 
+	```
+	Divide(([Measures].[m_Views_avg] - 
 	([DateDimensionView].[DateDimensionView].CurrentMember.PrevMember,[Measures].[m_Views_avg])), 
 	([DateDimensionView].[DateDimensionView].CurrentMember.PrevMember,[Measures].[m_Views_avg]), 0)
-  ```
+	```
 
 - TotalViewsMonth
-  ```
-  Sum([DateDimensionView].[DateDimensionView].CurrentMember.FirstChild : 
+	```
+	Sum([DateDimensionView].[DateDimensionView].CurrentMember.FirstChild : 
 	[DateDimensionView].[DateDimensionView].CurrentMember,[Measures].[m_Delta_sum])
-  ```
+	```
 
 ## Posts cube
 
 ### Dimensions
 - PostType - (String) type of post (Question, Announcement, Article, and  Discussion).
-- MonthYearPosts - (String) the date the post was created in the Mon-YYYY format.
-- MonthYearNumPosts - (Int) the date the post was created in the MMMYYYY format. 
-- FullDatePosts - (Date) the date the post was created.
-- MonthYearView - (String) date the post was viewed in the Mon-YYYY format.  
-- MonthYearViewNum - (Int) date the post was viewed in the MMMYYYY format.
+- MonthYear - (String) the date the post was created in the Mon-YYYY format.
+- MonthYearNum - (Int) the date the post was created in the MMMYYYY format. 
+- FullDate - (Date) the date the post was created.
+- WeekYear - (Int) number of the week in the year in which the post was created.
 - NamePost - (String) the post title.
 - LinkPost - (String) the link to the post.
-- WeekYear - (Int) number of the week in the year in which the post was created. 
+- Tags -
+- ISCMember - 
+- ISCMemberStr - 
 
 ### Measures
+m_AcceptedAnswerAmount_sum
+m_CountAnnouncement_sum
+m_CountArticle_sum
+m_AvgVote_sum
+m_CommentsAmount_sum
+m_CommentsContribution
+m_CountDiscussion_sum
+m_ID_distinct
+m_CountQuestions_sum
+m_CountTagCache_sum
+m_CountTagEnsemble_sum
+m_CountTagHealthShare_sum
+m_CountTagIRIS_sum
+m_Views_sum
+	
 - m_AcceptedAnswerAmount_sum - 
 - m_CountArticle_sum - 
 - m_AvgVote_sum - 
-- m_CacheTag_sum - the number of views of a post with the tag “Caché”. 
-- m_CommentsAmont_sum - 
-- m_CommentsContribution_sum - 
-- m_CountDiscussion_sum - the number of posts of type “Discussion”.
-- m_EnsembleTag_sum - the number of posts with the “Ensemble” tag. 
-- m_HealthShareTag_sum - the number of views of posts with the “HealthShare” tag.
-- m_InterSystemsIRISTag_sum - the number of views of posts with the “InterSystems IRIS” tag. 
+- m_Views_sum
+- m_CountAnnouncement_sum -
+- m_CommentsAmount_sum
+- m_CommentsContribution
 - m_ID_distinct - the number of posts.
+- m_CountDiscussion_sum - the number of posts of type “Discussion”.
 - m_CountQuestions_sum - the number of posts of type “Questions”.
-- m_CountTagCache_sum - the number of views of posts with the “Caché” tag. 
-- m_CountTagEnsemble_sum - the number of views of posts with the “Ensemble” tag.
-- m_CountTagHealthShare_sum - the number of views of posts with the “HealthShare” tag.
-- m_CountTagIRIS_sum - the number of views of posts with the “InterSystems IRIS” tag.
+- m_CountTagCache_sum - the number of posts with the “Caché” tag. 
+- m_CountTagEnsemble_sum - the number of posts with the “Ensemble” tag.
+- m_CountTagHealthShare_sum - the number posts with the “HealthShare” tag.
+- m_CountTagIRIS_sum - the number of posts with the “InterSystems IRIS” tag.
 
 
 ### Calculated Measures

@@ -107,22 +107,7 @@
 - ISCMember - 
 - ISCMemberStr - 
 
-### Measures
-m_AcceptedAnswerAmount_sum
-m_CountAnnouncement_sum
-m_CountArticle_sum
-m_AvgVote_sum
-m_CommentsAmount_sum
-m_CommentsContribution
-m_CountDiscussion_sum
-m_ID_distinct
-m_CountQuestions_sum
-m_CountTagCache_sum
-m_CountTagEnsemble_sum
-m_CountTagHealthShare_sum
-m_CountTagIRIS_sum
-m_Views_sum
-	
+### Measures	
 - m_AcceptedAnswerAmount_sum - 
 - m_CountArticle_sum - 
 - m_AvgVote_sum - 
@@ -140,75 +125,191 @@ m_Views_sum
 
 
 ### Calculated Measures
+- MTM_Articles_num - 
+	```
+	[Measures].[m_CountArticle_sum] - 
+		([DateDimensionPost].[DateDimensionPost].CurrentMember.PrevMember,[Measures].[m_CountArticle_sum])
+	```
+	
+- MTM_Articles_percent -
+	```
+	Divide( ([Measures].[m_CountArticle_sum] - 
+		([DateDimensionPost].[DateDimensionPost].CurrentMember.PrevMember,[Measures].[m_CountArticle_sum])), 
+		([DateDimensionPost].[DateDimensionPost].CurrentMember.PrevMember,[Measures].[m_CountArticle_sum]), 0)
+	```
+	
+- MTM_CommentsContribution_num -
+	```
+	[Measures].[m_CommentsContribution] - 
+		([DateDimensionPost].[DateDimensionPost].CurrentMember.PrevMember,[Measures].[m_CommentsContribution])
+	```
+
+- MTM_CommentsContribution_percent -
+	```
+	Divide(([Measures].[m_CommentsContribution] - 
+		([DateDimensionPost].[DateDimensionPost].CurrentMember.PrevMember,[Measures].[m_CommentsContribution])), 
+		([DateDimensionPost].[DateDimensionPost].CurrentMember.PrevMember,[Measures].[m_CommentsContribution]), 0)
+	```
+
+- MTM_Posts_num -
+	```
+	[Measures].[m_ID_distinct] - 
+		([DateDimensionPost].[DateDimensionPost].CurrentMember.PrevMember,[Measures].[m_ID_distinct])
+	```
+
+- MTM_Posts_percent -
+	```
+	Divide(([Measures].[m_ID_distinct] - 
+		([DateDimensionPost].[DateDimensionPost].CurrentMember.PrevMember,[Measures].[m_ID_distinct])), 
+		([DateDimensionPost].[DateDimensionPost].CurrentMember.PrevMember,[Measures].[m_ID_distinct]), 0)
+	```
+
+- MTM_Questions_num -
+	```
+	[Measures].[m_CountQuestions_sum] - 
+		([DateDimensionPost].[DateDimensionPost].CurrentMember.PrevMember,[Measures].[m_CountQuestions_sum])
+	```
+
+- MTM_Questions_percent -
+	```
+	Divide(([Measures].[m_CountQuestions_sum] - 
+		([DateDimensionPost].[DateDimensionPost].CurrentMember.PrevMember,[Measures].[m_CountQuestions_sum])), 
+		([DateDimensionPost].[DateDimensionPost].CurrentMember.PrevMember,[Measures].[m_CountQuestions_sum]), 0)
+	```
+
+- TotalArticlesMonth -
+	```
+	Sum([DateDimensionPost].[DateDimensionPost].CurrentMember.FirstChild : 
+		[DateDimensionPost].[DateDimensionPost].CurrentMember,[Measures].[m_CountArticle_sum])
+	```
+	
+- TotalPostsMonth -
+	```
+	Sum([DateDimensionPost].[DateDimensionPost].CurrentMember.FirstChild : 
+		[DateDimensionPost].[DateDimensionPost].CurrentMember,[Measures].[m_ID_distinct])
+	```
+
+- TotalQuestionsMonth -
+	```
+	Sum([DateDimensionPost].[DateDimensionPost].CurrentMember.FirstChild : 
+		[DateDimensionPost].[DateDimensionPost].CurrentMember,[Measures].[m_CountQuestions_sum])
+	```
+
+- YTY_Articles_num -
+	```
+	[Measures].[m_CountArticle_sum] - 
+		([DateDimensionPost].[DateDimensionPost].CurrentMember.Lag(12), [Measures].[m_CountArticle_sum])
+	```
+
+- YTY_Articles_percent -
+	```
+	Divide(([Measures].[m_CountArticle_sum] - 
+		([DateDimensionPost].[DateDimensionPost].CurrentMember.Lag(12), [Measures].[m_CountArticle_sum])), 
+		([DateDimensionPost].[DateDimensionPost].CurrentMember.Lag(12), [Measures].[m_CountArticle_sum]), 0)
+	```
+
+- YTY_CommentsContribution_num -
+	```
+	[Measures].[m_CommentsContribution] - 
+		([DateDimensionPost].[DateDimensionPost].CurrentMember.Lag(12), [Measures].[m_CommentsContribution])
+	```
+
+- YTY_CommentsContribution_percent -
+	```
+	Divide(([Measures].[m_CommentsContribution] - 
+		([DateDimensionPost].[DateDimensionPost].CurrentMember.Lag(12), [Measures].[m_CommentsContribution])), 
+		([DateDimensionPost].[DateDimensionPost].CurrentMember.Lag(12), [Measures].[m_CommentsContribution]), 0)
+	```
+
+- YTY_Posts_num -
+	```
+	[Measures].[m_ID_distinct] - 
+		([DateDimensionPost].[DateDimensionPost].CurrentMember.Lag(12), [Measures].[m_ID_distinct])
+	```
+
+- YTY_Posts_percent -
+	```
+	Divide(([Measures].[m_ID_distinct] - 
+		([DateDimensionPost].[DateDimensionPost].CurrentMember.Lag(12), [Measures].[m_ID_distinct])), 
+		([DateDimensionPost].[DateDimensionPost].CurrentMember.Lag(12), [Measures].[m_ID_distinct]), 0)
+	```
+
+- YTY_Questions_num -
+	```
+	[Measures].[m_CountQuestions_sum] - 
+		([DateDimensionPost].[DateDimensionPost].CurrentMember.Lag(12), [Measures].[m_CountQuestions_sum])
+	```
+
+- YTY_Questions_percent -
+	```
+	Divide(([Measures].[m_CountQuestions_sum] - 
+		([DateDimensionPost].[DateDimensionPost].CurrentMember.PrevMember,[Measures].[m_CountQuestions_sum])), 
+		([DateDimensionPost].[DateDimensionPost].CurrentMember.PrevMember,[Measures].[m_CountQuestions_sum]), 0)
+	```
+	
 - TotalArticlesMonth - the sum of InterSystems members for the entire period up to a certain month.
-  ```
-  Sum([DateDimensionPosts].[DateDimensionPosts].CurrentMember.FirstChild : 
-	[DateDimensionPosts].[DateDimensionPosts].CurrentMember,[Measures].[m_CountArticle_sum])
-  ```
+	```
+	Sum([DateDimensionPosts].[DateDimensionPosts].CurrentMember.FirstChild : 
+		[DateDimensionPosts].[DateDimensionPosts].CurrentMember,[Measures].[m_CountArticle_sum])
+	```
  
 - TotalPostsMonth - 
-  ```
-  Sum([DateDimensionPosts].[DateDimensionPosts].CurrentMember.FirstChild : 
-	[DateDimensionPosts].[DateDimensionPosts].CurrentMember,[Measures].[m_ID_distinct])
-  ```
+	```
+	Sum([DateDimensionPosts].[DateDimensionPosts].CurrentMember.FirstChild : 
+		[DateDimensionPosts].[DateDimensionPosts].CurrentMember,[Measures].[m_ID_distinct])
+	```
  
 - TotalQuestionsMonth - 
-  ```
-  Sum([DateDimensionPosts].[DateDimensionPosts].CurrentMember.FirstChild : 
-	[DateDimensionPosts].[DateDimensionPosts].CurrentMember,[Measures].[m_CountQuestions_sum])
-  ```
-
-- TotalViewsMonth - 
-  ```
-  Sum([MonthYearView].[MonthYearView].CurrentMember.FirstChild : 
-	[MonthYearView].[MonthYearView].CurrentMember,[Measures].[m_Delta_sum])
-  ```
+	```
+	Sum([DateDimensionPosts].[DateDimensionPosts].CurrentMember.FirstChild : 
+		[DateDimensionPosts].[DateDimensionPosts].CurrentMember,[Measures].[m_CountQuestions_sum])
+	```
  
 ### Formula field
 - CurrentDate - full current date.
-  ```
-  Today()
-  ```
+	```
+	Today()
+	```
 
 - CurrentMonthNum - current month date in MMMYYYY format.  
-  ```
-  Date a = FirstDayOfMonth(@CurrentDate) 
-  return (Year(a) * 100) + Month(a)
-  ```
+	```
+	Date a = FirstDayOfMonth(@CurrentDate) 
+	return (Year(a) * 100) + Month(a)
+	```
  
 - CurrentMonthYearNum - last month date in MMMYYYY format.
-  ```
-  Date a = FirstDayOfMonth(@CurrentDate) - 1;
-  return (Year(a) * 100) + Month(a)
-  ```
+	```
+	Date a = FirstDayOfMonth(@CurrentDate) - 1;
+	return (Year(a) * 100) + Month(a)
+	```
  
 - Last6Month - a date that was 6 months ago in the MMMYYYY format.
-  ```
-  Date a = FirstDayOfMonth(Today()-Day()-210);
-  return (Year(a) * 100) + Month(a)
-  ```
+	```
+	Date a = FirstDayOfMonth(Today()-Day()-210);
+	return (Year(a) * 100) + Month(a)
+	```
    
 - Each Queries has a filter that excludes the current month
 
   #### Posts
-  ```
-  @MonthYearNum <> @CurrentMonth
-  ```
+	```
+	@MonthYearNum <> @CurrentMonth
+	```
 
   #### Members
-  ```
-  @members_MonthYearNum <> @CurrentMonth
-  ```
+	```
+	@members_MonthYearNum <> @CurrentMonth
+	```
 
   #### ContributedMembers
-  ```
-  @contributedmembers_MonthYearNum <> @CurrentMonth
-  ```
+	```
+	@contributedmembers_MonthYearNum <> @CurrentMonth
+	```
 
   #### Views
-  ```
-  @views_MonthYearNum <> @CurrentMonth
-  ```
+	```
+	@views_MonthYearNum <> @CurrentMonth
+	```
 </details>
 
 ## General information

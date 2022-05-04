@@ -4,109 +4,128 @@
 ## Member Cube
 
 ### Dimensions
-MonthYear - (String) user registration date in the Mon-YYYY format.  
-MonthYearNum - (Int) user registration date in the MMMYYYY format.
-FullDate - (Date) user registration date.
-MonthYearContribution - 
-MonthYearNumContribution - 
-AuthorName - (String) user name.
-ISCMember - (Bool) whether the user is an employee of the InterSystems.
+- MonthYear - (String) user registration date in the Mon-YYYY format.  
+- MonthYearNum - (Int) user registration date in the MMMYYYY format.
+- FullDate - (Date) user registration date.
+- MonthYearContribution - 
+- MonthYearNumContribution - 
+- AuthorName - (String) user name.
+- ISCMember - (Bool) whether the user is an employee of the InterSystems.
 
 ### Measures
-m_ID_distinct - number of members. 
-m_Views_avg - Average views among Contributed members. 
-m_Comments_sum - number of comments.
-m_Member_distinct - Number of Contributed Members. 
-m_CommentsAmount_sum - 
-m_CommentVotes_sum -  number of likes on all comments of the posts. 
+- m_ID_distinct - number of members. 
+- m_Views_avg - Average views among Contributed members. 
+- m_Comments_sum - number of comments.
+- m_Member_distinct - Number of Contributed Members. 
+- m_CommentsAmount_sum - 
+- m_CommentVotes_sum -  number of likes on all comments of the posts. 
 
 ### Calculated Measures
-ISCMemberStr - string representation of dimension ISCMember (InterSystems, Customers).
-Formula:
-CASE WHEN ISCMember = 1 THEN 'InterSystems' ELSE 'Customers' 
+- ISCMemberStr - string representation of dimension ISCMember (InterSystems, Customers).
+   ```
+   CASE WHEN ISCMember = 1 THEN 'InterSystems' ELSE 'Customers' 
+   ```
+ 
+- MemberMonthTotal - the sum of all members for the entire period up to a certain month.
+   ```
+   Sum([DateDimension].[DateDimension].CurrentMember.FirstChild : 
+       [DateDimension].[DateDimension].CurrentMember,[Measures].[m_ID_distinct])
+   ```
+ 
+- CustomersTotalMonthly - the sum of Customers Members for the entire period up to a certain month.
+   ```
+   Sum([DateDimension].[DateDimension].CurrentMember.FirstChild : 
+       [DateDimension].[DateDimension].CurrentMember,[Measures].[m_MemberCustomers_sum])
+   ```
 
-MemberMonthTotal - the sum of all members for the entire period up to a certain month. 
-Formula: 
-Sum([DateDimension].[DateDimension].CurrentMember.FirstChild : [DateDimension].[DateDimension].CurrentMember,[Measures].[m_ID_distinct])
-
-CustomersTotalMonthly - the sum of Customers Members for the entire period up to a certain month. 
-Formula:
-Sum([DateDimension].[DateDimension].CurrentMember.FirstChild : [DateDimension].[DateDimension].CurrentMember,[Measures].[m_MemberCustomers_sum])
-
-InterSystemsTotalMonthly - the sum of InterSystems members for the entire period up to a certain month. 
-Formula:
-Sum([DateDimension].[DateDimension].CurrentMember.FirstChild : [DateDimension].[DateDimension].CurrentMember,[Measures].[m_MembersInterSystems_sum])
-
-
-
-
-
+- InterSystemsTotalMonthly - the sum of InterSystems members for the entire period up to a certain month.
+   ```
+   Sum([DateDimension].[DateDimension].CurrentMember.FirstChild : 
+       [DateDimension].[DateDimension].CurrentMember,[Measures].[m_MembersInterSystems_sum])
+   ```
+ 
 ## Posts cube
 
 ### Dimensions
-PostType - (String) type of post (Question, Announcement, Article, and  Discussion).
-MonthYearPosts - (String) the date the post was created in the Mon-YYYY format.
-MonthYearNumPosts - (Int) the date the post was created in the MMMYYYY format. 
-FullDatePosts - (Date) the date the post was created.
-MonthYearView - (String) date the post was viewed in the Mon-YYYY format.  
-MonthYearViewNum - (Int) date the post was viewed in the MMMYYYY format.
-NamePost - (String) the post title.
-LinkPost - (String) the link to the post.
-WeekYear - (Int) number of the week in the year in which the post was created. 
+- PostType - (String) type of post (Question, Announcement, Article, and  Discussion).
+- MonthYearPosts - (String) the date the post was created in the Mon-YYYY format.
+- MonthYearNumPosts - (Int) the date the post was created in the MMMYYYY format. 
+- FullDatePosts - (Date) the date the post was created.
+- MonthYearView - (String) date the post was viewed in the Mon-YYYY format.  
+- MonthYearViewNum - (Int) date the post was viewed in the MMMYYYY format.
+- NamePost - (String) the post title.
+- LinkPost - (String) the link to the post.
+- WeekYear - (Int) number of the week in the year in which the post was created. 
 
 ### Measures
-m_AcceptedAnswerAmount_sum - 
-m_CountArticle_sum - 
-m_AvgVote_sum - 
-m_CacheTag_sum - the number of views of a post with the tag “Caché”. 
-m_CommentsAmont_sum - 
-m_CommentsContribution_sum - 
-m_CountDiscussion_sum - the number of posts of type “Discussion”.
-m_EnsembleTag_sum - the number of posts with the “Ensemble” tag. 
-m_HealthShareTag_sum - the number of views of posts with the “HealthShare” tag.
-m_InterSystemsIRISTag_sum - the number of views of posts with the “InterSystems IRIS” tag. 
-m_ID_distinct - the number of posts.
-m_CountQuestions_sum - the number of posts of type “Questions”.
-m_CountTagCache_sum - the number of views of posts with the “Caché” tag. 
-m_CountTagEnsemble_sum - the number of views of posts with the “Ensemble” tag.
-m_CountTagHealthShare_sum - the number of views of posts with the “HealthShare” tag.
-m_CountTagIRIS_sum - the number of views of posts with the “InterSystems IRIS” tag.
-
+- m_AcceptedAnswerAmount_sum - 
+- m_CountArticle_sum - 
+- m_AvgVote_sum - 
+- m_CacheTag_sum - the number of views of a post with the tag “Caché”. 
+- m_CommentsAmont_sum - 
+- m_CommentsContribution_sum - 
+- m_CountDiscussion_sum - the number of posts of type “Discussion”.
+- m_EnsembleTag_sum - the number of posts with the “Ensemble” tag. 
+- m_HealthShareTag_sum - the number of views of posts with the “HealthShare” tag.
+- m_InterSystemsIRISTag_sum - the number of views of posts with the “InterSystems IRIS” tag. 
+- m_ID_distinct - the number of posts.
+- m_CountQuestions_sum - the number of posts of type “Questions”.
+- m_CountTagCache_sum - the number of views of posts with the “Caché” tag. 
+- m_CountTagEnsemble_sum - the number of views of posts with the “Ensemble” tag.
+- m_CountTagHealthShare_sum - the number of views of posts with the “HealthShare” tag.
+- m_CountTagIRIS_sum - the number of views of posts with the “InterSystems IRIS” tag.
 
 
 ### Calculated Measures
-TotalArticlesMonth - the sum of InterSystems members for the entire period up to a certain month.
-Formula: 
-Sum([DateDimensionPosts].[DateDimensionPosts].CurrentMember.FirstChild : [DateDimensionPosts].[DateDimensionPosts].CurrentMember,[Measures].[m_CountArticle_sum])
-TotalPostsMonth - 
-Formula:
-Sum([DateDimensionPosts].[DateDimensionPosts].CurrentMember.FirstChild : [DateDimensionPosts].[DateDimensionPosts].CurrentMember,[Measures].[m_ID_distinct])
+- TotalArticlesMonth - the sum of InterSystems members for the entire period up to a certain month.
+  ```
+  Sum([DateDimensionPosts].[DateDimensionPosts].CurrentMember.FirstChild : 
+      [DateDimensionPosts].[DateDimensionPosts].CurrentMember,[Measures].[m_CountArticle_sum])
+  ```
+ 
+- TotalPostsMonth - 
+  ```
+  Sum([DateDimensionPosts].[DateDimensionPosts].CurrentMember.FirstChild : 
+      [DateDimensionPosts].[DateDimensionPosts].CurrentMember,[Measures].[m_ID_distinct])
+  ```
+ 
+- TotalQuestionsMonth - 
+  ```
+  Sum([DateDimensionPosts].[DateDimensionPosts].CurrentMember.FirstChild : 
+      [DateDimensionPosts].[DateDimensionPosts].CurrentMember,[Measures].[m_CountQuestions_sum])
+  ```
 
-TotalQuestionsMonth - 
-Formula:
-Sum([DateDimensionPosts].[DateDimensionPosts].CurrentMember.FirstChild : [DateDimensionPosts].[DateDimensionPosts].CurrentMember,[Measures].[m_CountQuestions_sum])
+- TotalViewsMonth - 
+  ```
+  Sum([MonthYearView].[MonthYearView].CurrentMember.FirstChild : 
+      [MonthYearView].[MonthYearView].CurrentMember,[Measures].[m_Delta_sum])
+  ```
+ 
+### Formula field
+- CurrentDate - full current date.
+  ```
+  Today()
+  ```
 
-TotalViewsMonth - 
-Formula
-Sum([MonthYearView].[MonthYearView].CurrentMember.FirstChild : [MonthYearView].[MonthYearView].CurrentMember,[Measures].[m_Delta_sum])
+- CurrentMonthNum - current month date in MMMYYYY format.  
+  ```
+  Date a = FirstDayOfMonth(@CurrentDate) 
+  return (Year(a) * 100) + Month(a)
+  ```
+ 
+- CurrentMonthYearNum - last month date in MMMYYYY format.
+  ```
+  Date a = FirstDayOfMonth(@CurrentDate) - 1;
+  return (Year(a) * 100) + Month(a)
+  ```
+ 
+- Last6Month - a date that was 6 months ago in the MMMYYYY format.
+  ```
+  Date a = FirstDayOfMonth(Today()-Day()-210);
+  return (Year(a) * 100) + Month(a)
+  ```
 
-Formula field
-CurrentDate - full current date.
-Today()
-
-CurrentMonthNum - current month date in MMMYYYY format.  
-Date a = FirstDayOfMonth(@CurrentDate) 
-return (Year(a) * 100) + Month(a)
-
-CurrentMonthYearNum - last month date in MMMYYYY format.
-Date a = FirstDayOfMonth(@CurrentDate) - 1;
-return (Year(a) * 100) + Month(a)
-
-Last6Month - a date that was 6 months ago in the MMMYYYY format.
-Date a = FirstDayOfMonth(Today()-Day()-210);
-return (Year(a) * 100) + Month(a)
-
- </details>
+</details>
 
 ## General information
 

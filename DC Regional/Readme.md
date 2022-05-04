@@ -124,6 +124,28 @@
   Date a = FirstDayOfMonth(Today()-Day()-210);
   return (Year(a) * 100) + Month(a)
   ```
+   
+- Each Queries has a filter that excludes the current month
+
+  #### Posts
+  ```
+  @MonthYearNum <> @CurrentMonth
+  ```
+
+  #### Members
+  ```
+  @members_MonthYearNum <> @CurrentMonth
+  ```
+
+  #### ContributedMembers
+  ```
+  @contributedmembers_MonthYearNum <> @CurrentMonth
+  ```
+
+  #### Views
+  ```
+  @views_MonthYearNum <> @CurrentMonth
+  ```
 
 </details>
 

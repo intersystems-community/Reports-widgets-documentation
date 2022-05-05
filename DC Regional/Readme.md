@@ -354,22 +354,22 @@
 
   #### Posts
 	```
-	@MonthYearNum <> @CurrentMonth
+	@MonthYearNum < @CurrentMonth
 	```
 
   #### Members
 	```
-	@members_MonthYearNum <> @CurrentMonth
+	@members_MonthYearNum < @CurrentMonth
 	```
 
   #### ContributedMembers
 	```
-	@contributedmembers_MonthYearNum <> @CurrentMonth
+	@contributedmembers_MonthYearNum < @CurrentMonth
 	```
 
   #### Views
 	```
-	@views_MonthYearNum <> @CurrentMonth
+	@views_MonthYearNum < @CurrentMonth
 	```
 </details>
 
@@ -387,7 +387,16 @@ _The table shows the dynamics of the number of members, new members per month, n
 <details>
 <summary>For developers</summary>
 
-Table with MemberMonthTotal, m_ID_distinct and  m_Member_distinct in Display, MonthYear in Group. Only the last 6 months are taken by the Select Bottom N method.  
+#### Measures
+- MemberMonthTotal
+- m_ID_distinct
+- m_Member_distinct
+	
+#### Dimensions
+- member_MonthYear
+
+#### Filters
+- members_MonthYearNum >= @Last6Month
 
 </details>
 
@@ -397,7 +406,15 @@ _Members Total shows the number of users registered on the site at the end of ea
 <details>
 <summary>For developers</summary>
 
-Bar chart with MemberMonthTotal in Show Values, MonthYear in Category. Only the last 6 months are taken into MonthYear using the Select Bottom N function, and current month skipped by filter.
+
+#### Measures
+- TotalMemberMonth
+	
+#### Dimensions
+- members_MonthYear
+
+#### Filters
+- members_MonthYearNum >= @Last6Month
 
 </details>
 
@@ -407,7 +424,22 @@ _The table shows the cumulative total and the number of new posts per month by P
 <details>
 <summary>For developers</summary>
 
-Table with TotalPostsMonth, TotalQuestionsMonth, TotalArticlesMonth, posts_m_ID_distinct, m_CountQuestions_sum, m_CountArticle_sum, m_CountAnnouncement_sum and m_CountDiscussion_sum in Display, MonthYearPosts in Group. Only the last 6 months are taken by the Select Bottom N method, and the current month is excluded by the filter MonthYearNum != @CurrentMonthYear (MMMYYYY)
+
+#### Measures
+- TotalPostsMonth
+- TotalQuestionsMonth
+- TotalArticlesMonth
+- m_ID_distinct
+- m_CountQuestions_sum
+- m_CountArticle_sum
+- m_CountAnnouncement_sum
+- m_CountDiscussion_sum
+
+#### Dimensions
+- MonthYearPosts
+
+#### Filters
+- MonthYearNum >= @Last6Month
 
 </details>
 
@@ -417,7 +449,19 @@ _This chart shows the number of new posts by type for each month._
 <details>
 <summary>For developers</summary>
 
-Bar chart with New Questions, New Articles, New Announcements and New Discussions in Show Values, MonthYearPosts in Category. Only the last 6 months are taken into MonthYearPosts using the Select Bottom N function, and the current month skipped by filter.
+#### Measures
+- m_ID_distinct Group By PostType
+	
+#### Category
+- PostType
+
+#### Dimensions (Series)
+- MonthYear
+
+#### Filters
+- MonthYearNum >= @Last6Month
+	
+Bar chart with New Questions, New Articles, New Announcements and New Discussions in Show Values, MonthYearPosts in Category. Only the last 6 months are taken into MonthYearPosts using the Select Bottom N function.
 
 </details>
 

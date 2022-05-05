@@ -26,16 +26,16 @@
 - TotalMemberMonth - the sum of all members for the entire period up to a certain month.
 	```
 	Sum([DateDimensionMember].[DateDimensionMember].CurrentMember.FirstChild : 
-	[DateDimensionMember].[DateDimensionMember].CurrentMember,[Measures].[m_ID_distinct])
+		[DateDimensionMember].[DateDimensionMember].CurrentMember,[Measures].[m_ID_distinct])
 	```
 	
-- MTM_Members_num - 
+- MTM_Members_num - Monthly growth by users
 	```
 	[Measures].[TotalMemberMonth] - 
 		([DateDimensionMember].[DateDimensionMember].CurrentMember.PrevMember,[Measures].[TotalMemberMonth])
 	```
 	
-- MTM_Members_percent - 
+- MTM_Members_percent - Percentage monthly growth by users
 	```
 	Divide(([Measures].[TotalMemberMonth] - 
 		([DateDimensionMember].[DateDimensionMember].CurrentMember.PrevMember,[Measures].[TotalMemberMonth])), 
@@ -45,52 +45,54 @@
 ## Views cube
 
 ### Dimensions
-- MonthYear
-- MonthYearNum
-- YearView
-- NamePost
-- Tags
-- LinkPost
-- PostType
+- MonthYear - (String) The date the post was viewed in the format Mon-YYYY.
+- MonthYearNum - (int) The date the post was viewed in the format MMYYYY.
+- YearView - (String) The year in which the post was viewed.
+- NamePost - (String) Post title.
+- Tags - (String) Tags used in the post.
+- LinkPost - (String) Community post link
+- PostType - (String) type of post (Question, Announcement, Article, and  Discussion).
 
 ### Measures
-- m_CacheTag_sum
-- m_EnsembleTag_sum
-- m_HealthShareTag_sum
-- m_InterSystemsIRISTag_sum
-- m_Views_avg
-- m_Delta_sum
-- m_Views_sum
+- m_CacheTag_sum - The number of views of posts with the Cache tag.
+- m_EnsembleTag_sum - The number of views of posts with the Ensemble tag.
+- m_HealthShareTag_sum - The number of views of posts with the Health Share tag
+- m_InterSystemsIRISTag_sum - The number of views of posts with the InterSystems IRIS tag.
+- m_Views_avg - Average views
+- m_Delta_sum - 
+- m_Views_sum - Number of views.
 
 ### Calculated Measures
 - MTM_Delta_num
 	```
-	[Measures].[m_Delta_sum] - ([DateDimensionView].[DateDimensionView].CurrentMember.PrevMember,[Measures].[m_Delta_sum])
+	[Measures].[m_Delta_sum] - 
+		([DateDimensionView].[DateDimensionView].CurrentMember.PrevMember,[Measures].[m_Delta_sum])
 	```
   
 - MTM_Delta_percent
 	```
 	Divide(([Measures].[m_Delta_sum] -
-	([DateDimensionView].[DateDimensionView].CurrentMember.PrevMember,[Measures].[m_Delta_sum])), 
-	([DateDimensionView].[DateDimensionView].CurrentMember.PrevMember,[Measures].[m_Delta_sum]), 0)
+		([DateDimensionView].[DateDimensionView].CurrentMember.PrevMember,[Measures].[m_Delta_sum])), 
+		([DateDimensionView].[DateDimensionView].CurrentMember.PrevMember,[Measures].[m_Delta_sum]), 0)
 	```
 	
 - MTM_ViewsAVG_num
 	```
-	[Measures].[m_Views_avg] - ([DateDimensionView].[DateDimensionView].CurrentMember.PrevMember,[Measures].[m_Views_avg])
+	[Measures].[m_Views_avg] - 
+		([DateDimensionView].[DateDimensionView].CurrentMember.PrevMember,[Measures].[m_Views_avg])
 	```
 	
 - MTM_ViewsAVG_percent
 	```
 	Divide(([Measures].[m_Views_avg] - 
-	([DateDimensionView].[DateDimensionView].CurrentMember.PrevMember,[Measures].[m_Views_avg])), 
-	([DateDimensionView].[DateDimensionView].CurrentMember.PrevMember,[Measures].[m_Views_avg]), 0)
+		([DateDimensionView].[DateDimensionView].CurrentMember.PrevMember,[Measures].[m_Views_avg])), 
+		([DateDimensionView].[DateDimensionView].CurrentMember.PrevMember,[Measures].[m_Views_avg]), 0)
 	```
 
 - TotalViewsMonth
 	```
 	Sum([DateDimensionView].[DateDimensionView].CurrentMember.FirstChild : 
-	[DateDimensionView].[DateDimensionView].CurrentMember,[Measures].[m_Delta_sum])
+		[DateDimensionView].[DateDimensionView].CurrentMember,[Measures].[m_Delta_sum])
 	```
 
 ## Views cube
@@ -291,26 +293,77 @@
 	```
  
 ### Formula field
+- CommentsPerDay
+	```
+	@m_CommentsContribution / 365 * 12
+	```
+
+- Lang - Returns an array where the first value is the community region and the second value is a link to community.intersystems. The region depends on the first two-character filename EnCommunityAnalytics.cls = English Region. 
+	```
+	String lang = UpperCase(Left(reportName(), 2));
+
+	if (lang == "EN"){ return ["English", "https://community.intersystems.com/"] }
+	else if (lang == "PT"){ return ["Portuguese", "https://pt.community.intersystems.com/"] }
+	else if (lang == "CN"){ return ["Chinese", "https://cn.community.intersystems.com/"] }
+	else if (lang == "ES"){ return ["Spanish", "https://es.community.intersystems.com/"] }
+	else if (lang == "JP"){ return ["Japanese", "https://jp.community.intersystems.com/"] }
+	else if (lang == "FR"){ return ["French", "https://fr.community.intersystems.com/"] }
+	```
+
+- Last12Month - 
+	```
+	return (Year() - 1) * 100 + Month()
+	```
+	
+- Last1Month - 
+	```
+	Date a = FirstDayOfMonth(@CurrentDate) - 1;
+	return (Year(a) * 100) + Month(a)
+	```
+	
+- Last2Month - 
+	```
+	Date a = FirstDayOfMonth(@CurrentDate) - 32;
+	return (Year(a) * 100) + Month(a)
+	```
+	
+- Last6Month -
+	```
+	Date d = FirstDayOfMonth(@CurrentDate) - 180;
+	return (Year(d) * 100) + Month(d)
+	```
+	
+- LastYearStr - 
+	```
+	return ToText(ToDate(Year() - 1, Month(), 1), 'MMM-YYYY')
+	```
+	
+- PostsPerDay - 
+	```
+	@m_ID_distinct / 365 * 12
+	```
+	
+- YearWeek
+	```
+	ReplaceString(ToText(@YearPosts), ',', '') + 'W' + ToText(@WeekYear)
+	```
+	
+- PostType_label - 
+	```
+	if(@PostType == "ARTICLE"){ return "New Articles"}
+	else if(@PostType == "QUESTION"){ return "New Qeustions" }
+	else if(@PostType == "ANNOUNCEMENT"){ return "New Announcements" }
+	else if(@PostType == "DISCUSSION"){ return "New Discussions" }
+	```
+	
 - CurrentDate - full current date.
 	```
 	Today()
 	```
 
-- CurrentMonthNum - current month date in MMMYYYY format.  
+- CurrentMonth - current month date in MMMYYYY format.  
 	```
 	Date a = FirstDayOfMonth(@CurrentDate) 
-	return (Year(a) * 100) + Month(a)
-	```
- 
-- CurrentMonthYearNum - last month date in MMMYYYY format.
-	```
-	Date a = FirstDayOfMonth(@CurrentDate) - 1;
-	return (Year(a) * 100) + Month(a)
-	```
- 
-- Last6Month - a date that was 6 months ago in the MMMYYYY format.
-	```
-	Date a = FirstDayOfMonth(Today()-Day()-210);
 	return (Year(a) * 100) + Month(a)
 	```
    
@@ -351,7 +404,7 @@ _The table shows the dynamics of the number of members, new members per month, n
 <details>
 <summary>For developers</summary>
 
-Table with MemberMonthTotal, m_ID_distinct and  m_Member_distinct in Display, MonthYear in Group. Only the last 6 months are taken by the Select Bottom N method, and the current month is excluded by the filter MonthYearNum != @CurrentMonthYear (MMMYYYY)  
+Table with MemberMonthTotal, m_ID_distinct and  m_Member_distinct in Display, MonthYear in Group. Only the last 6 months are taken by the Select Bottom N method.  
 
 </details>
 

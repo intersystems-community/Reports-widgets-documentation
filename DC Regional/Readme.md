@@ -276,7 +276,7 @@
 	```
  
 ### Formula field
-- CommentsPerDay
+- CommentsPerDay - Average number of comments per month.
 	```
 	@m_CommentsContribution / 365 * 12
 	```
@@ -293,45 +293,45 @@
 	else if (lang == "FR"){ return ["French", "https://fr.community.intersystems.com/"] }
 	```
 
-- Last12Month - 
+- Last12Month - Date 12 months ago in YYYYMM format.
 	```
 	return (Year() - 1) * 100 + Month()
 	```
 	
-- Last1Month - 
+- Last1Month - Date months ago in YYYYMM format.
 	```
 	Date a = FirstDayOfMonth(@CurrentDate) - 1;
 	return (Year(a) * 100) + Month(a)
 	```
 	
-- Last2Month - 
+- Last2Month - Date 2 months ago in YYYYMM format.
 	```
 	Date a = FirstDayOfMonth(@CurrentDate) - 32;
 	return (Year(a) * 100) + Month(a)
 	```
 	
-- Last6Month -
+- Last6Month - Date 6 months ago in YYYYMM format.
 	```
 	Date d = FirstDayOfMonth(@CurrentDate) - 180;
 	return (Year(d) * 100) + Month(d)
 	```
 	
-- LastYearStr - 
+- LastYearStr - Date 12 months ago in Mon-YYYY format.
 	```
 	return ToText(ToDate(Year() - 1, Month(), 1), 'MMM-YYYY')
 	```
 	
-- PostsPerDay - 
+- PostsPerDay - Average number of posts per month.
 	```
 	@m_ID_distinct / 365 * 12
 	```
 	
-- YearWeek
+- YearWeek - Date in WWwYYYY format.
 	```
 	ReplaceString(ToText(@YearPosts), ',', '') + 'W' + ToText(@WeekYear)
 	```
 	
-- PostType_label - 
+- PostType_label - Formula for defining custom labels in charts.
 	```
 	if(@PostType == "ARTICLE"){ return "New Articles"}
 	else if(@PostType == "QUESTION"){ return "New Qeustions" }
@@ -344,7 +344,7 @@
 	Today()
 	```
 
-- CurrentMonth - current month date in MMMYYYY format.  
+- CurrentMonth - current month date in MMMYYYY format.
 	```
 	Date a = FirstDayOfMonth(@CurrentDate) 
 	return (Year(a) * 100) + Month(a)

@@ -2,28 +2,29 @@
 <summary>Measures and dimensions</summary>
 
 ## Member Cube
+	
+### Measures
+- m_ID_distinct - number of members. 
+- m_Member_distinct - Number of Contributed Members. 
 
 ### Dimensions
 - MonthYear - (String) user registration date in the Mon-YYYY format.  
-- MonthYearNum - (Int) user registration date in the MMMYYYY format.
+- MonthYearNum - (Int) user registration date in the YYYYMM format.
 - FullDateMember - (Date) user registration date.
 - Email - (String) user email.
 - Name - (String) user name.
 - Link - (String) link to user profile. 
 - ISCMember - (Bool) whether the user is an employee of the InterSystems.
 - ISCMemberStr - (String) string type of user status InterSystems or Customers.
-
-### Measures
-- m_ID_distinct - number of members. 
-- m_Member_distinct - Number of Contributed Members. 
+	
 
 ### Calculated Measures
-- ISCMemberStr - string representation of dimension ISCMember (InterSystems, Customers).
+- ISCMemberStr - String representation of dimension ISCMember (InterSystems, Customers).
 	```
 	CASE WHEN ISCMember = 1 THEN 'InterSystems' ELSE 'Customers' 
 	```
  
-- TotalMemberMonth - the sum of all members for the entire period up to a certain month.
+- TotalMemberMonth - The sum of all members for the entire period up to a certain month.
 	```
 	Sum([DateDimensionMember].[DateDimensionMember].CurrentMember.FirstChild : 
 		[DateDimensionMember].[DateDimensionMember].CurrentMember,[Measures].[m_ID_distinct])
@@ -46,7 +47,7 @@
 
 ### Dimensions
 - MonthYear - (String) The date the post was viewed in the format Mon-YYYY.
-- MonthYearNum - (int) The date the post was viewed in the format MMYYYY.
+- MonthYearNum - (int) The date the post was viewed in the format YYYYMM.
 - YearView - (String) The year in which the post was viewed.
 - NamePost - (String) Post title.
 - Tags - (String) Tags used in the post.
@@ -76,48 +77,48 @@
 		([DateDimensionView].[DateDimensionView].CurrentMember.PrevMember,[Measures].[m_Delta_sum]), 0)
 	```
 	
-- MTM_ViewsAVG_num
+- MTM_ViewsAVG_num - Monthly growth in average view.
 	```
 	[Measures].[m_Views_avg] - 
 		([DateDimensionView].[DateDimensionView].CurrentMember.PrevMember,[Measures].[m_Views_avg])
 	```
 	
-- MTM_ViewsAVG_percent
+- MTM_ViewsAVG_percent - Percentage growth in average view per month.
 	```
 	Divide(([Measures].[m_Views_avg] - 
 		([DateDimensionView].[DateDimensionView].CurrentMember.PrevMember,[Measures].[m_Views_avg])), 
 		([DateDimensionView].[DateDimensionView].CurrentMember.PrevMember,[Measures].[m_Views_avg]), 0)
 	```
 
-- TotalViewsMonth
+- TotalViewsMonth - Cumulative views per month.
 	```
 	Sum([DateDimensionView].[DateDimensionView].CurrentMember.FirstChild : 
 		[DateDimensionView].[DateDimensionView].CurrentMember,[Measures].[m_Delta_sum])
 	```
 
-## Views cube
+## ContributedMembers cube
 
 ### Dimensions
-- YearContributors
-- ISCMember
-- ISCMemberStr
-- FullDateContribution
-- MonthYear
-- MonthYearNum
-- Name
-- Link
-- Email
+- YearContributors - Year in which the user became a Contributor.
+- ISCMember - (Bool) whether the user is an employee of the InterSystems.
+- ISCMemberStr - (String) string type of user status InterSystems or Customers.
+- FullDateContribution - (Date) Date the user was added to Contributor.
+- MonthYear - (String) Date the user was added to the Contributor in Mon-YYYY format.
+- MonthYearNum - (int) Date the user was added to the Contributor in YYYYMM format.
+- Email - (String) user email.
+- Name - (String) user name.
+- Link - (String) link to user profile.
 	
 ### Measures
-- m_Comments_sum
-- m_CommentsAmount_sum
-- m_CommentVotes_sum
-- m_Member_distinct
-- m_PostFavs_sum
-- m_Overall_sum
-- m_Posts_sum
-- m_PostVotes_sum
-- m_Views_sum
+- m_Comments_sum - 
+- m_CommentsAmount_sum - 
+- m_CommentVotes_sum - 
+- m_Member_distinct - Number of Contributed Members.
+- m_PostFavs_sum - 
+- m_Overall_sum - 
+- m_Posts_sum - Number of posts created by the user
+- m_PostVotes_sum - 
+- m_Views_sum - Number of post views for Contributed Members.
 	
 	
 ## Posts cube
@@ -130,18 +131,18 @@
 - WeekYear - (Int) number of the week in the year in which the post was created.
 - NamePost - (String) the post title.
 - LinkPost - (String) the link to the post.
-- Tags -
-- ISCMember - 
-- ISCMemberStr - 
+- Tags - (String) Tags used in the post.
+- ISCMember - (Bool) whether the user is an employee of the InterSystems.
+- ISCMemberStr - (String) string type of user status InterSystems or Customers.
 
 ### Measures	
 - m_AcceptedAnswerAmount_sum - 
 - m_CountArticle_sum - 
 - m_AvgVote_sum - 
-- m_Views_sum
+- m_Views_sum - 
 - m_CountAnnouncement_sum -
-- m_CommentsAmount_sum
-- m_CommentsContribution
+- m_CommentsAmount_sum - 
+- m_CommentsContribution - 
 - m_ID_distinct - the number of posts.
 - m_CountDiscussion_sum - the number of posts of type “Discussion”.
 - m_CountQuestions_sum - the number of posts of type “Questions”.
@@ -152,13 +153,13 @@
 
 
 ### Calculated Measures
-- MTM_Articles_num - 
+- MTM_Articles_num - Monthly growth of posts with type Articles.
 	```
 	[Measures].[m_CountArticle_sum] - 
 		([DateDimensionPost].[DateDimensionPost].CurrentMember.PrevMember,[Measures].[m_CountArticle_sum])
 	```
 	
-- MTM_Articles_percent -
+- MTM_Articles_percent - Monthly growth of posts with type Articles in percentage.
 	```
 	Divide( ([Measures].[m_CountArticle_sum] - 
 		([DateDimensionPost].[DateDimensionPost].CurrentMember.PrevMember,[Measures].[m_CountArticle_sum])), 
@@ -178,57 +179,57 @@
 		([DateDimensionPost].[DateDimensionPost].CurrentMember.PrevMember,[Measures].[m_CommentsContribution]), 0)
 	```
 
-- MTM_Posts_num -
+- MTM_Posts_num - Monthly growth of posts created by the user.
 	```
 	[Measures].[m_ID_distinct] - 
 		([DateDimensionPost].[DateDimensionPost].CurrentMember.PrevMember,[Measures].[m_ID_distinct])
 	```
 
-- MTM_Posts_percent -
+- MTM_Posts_percent - Monthly growth of posts created by the user as a percentage.
 	```
 	Divide(([Measures].[m_ID_distinct] - 
 		([DateDimensionPost].[DateDimensionPost].CurrentMember.PrevMember,[Measures].[m_ID_distinct])), 
 		([DateDimensionPost].[DateDimensionPost].CurrentMember.PrevMember,[Measures].[m_ID_distinct]), 0)
 	```
 
-- MTM_Questions_num -
+- MTM_Questions_num - Monthly growth of posts with type Questions.
 	```
 	[Measures].[m_CountQuestions_sum] - 
 		([DateDimensionPost].[DateDimensionPost].CurrentMember.PrevMember,[Measures].[m_CountQuestions_sum])
 	```
 
-- MTM_Questions_percent -
+- MTM_Questions_percent - Monthly growth of posts with type Questions in percentage.
 	```
 	Divide(([Measures].[m_CountQuestions_sum] - 
 		([DateDimensionPost].[DateDimensionPost].CurrentMember.PrevMember,[Measures].[m_CountQuestions_sum])), 
 		([DateDimensionPost].[DateDimensionPost].CurrentMember.PrevMember,[Measures].[m_CountQuestions_sum]), 0)
 	```
 
-- TotalArticlesMonth -
+- TotalArticlesMonth - The cumulative total of posts with type Article.
 	```
 	Sum([DateDimensionPost].[DateDimensionPost].CurrentMember.FirstChild : 
 		[DateDimensionPost].[DateDimensionPost].CurrentMember,[Measures].[m_CountArticle_sum])
 	```
 	
-- TotalPostsMonth -
+- TotalPostsMonth - Cumulative total of posts.
 	```
 	Sum([DateDimensionPost].[DateDimensionPost].CurrentMember.FirstChild : 
 		[DateDimensionPost].[DateDimensionPost].CurrentMember,[Measures].[m_ID_distinct])
 	```
 
-- TotalQuestionsMonth -
+- TotalQuestionsMonth - The cumulative total of posts with type Questions.
 	```
 	Sum([DateDimensionPost].[DateDimensionPost].CurrentMember.FirstChild : 
 		[DateDimensionPost].[DateDimensionPost].CurrentMember,[Measures].[m_CountQuestions_sum])
 	```
 
-- YTY_Articles_num -
+- YTY_Articles_num - Yearly growth of posts with type Article created by the user.
 	```
 	[Measures].[m_CountArticle_sum] - 
 		([DateDimensionPost].[DateDimensionPost].CurrentMember.Lag(12), [Measures].[m_CountArticle_sum])
 	```
 
-- YTY_Articles_percent -
+- YTY_Articles_percent - Yearly growth in percentage of posts with type Article created by the user.
 	```
 	Divide(([Measures].[m_CountArticle_sum] - 
 		([DateDimensionPost].[DateDimensionPost].CurrentMember.Lag(12), [Measures].[m_CountArticle_sum])), 
@@ -248,48 +249,30 @@
 		([DateDimensionPost].[DateDimensionPost].CurrentMember.Lag(12), [Measures].[m_CommentsContribution]), 0)
 	```
 
-- YTY_Posts_num -
+- YTY_Posts_num - Yearly growth of posts created by the user.
 	```
 	[Measures].[m_ID_distinct] - 
 		([DateDimensionPost].[DateDimensionPost].CurrentMember.Lag(12), [Measures].[m_ID_distinct])
 	```
 
-- YTY_Posts_percent -
+- YTY_Posts_percent - Yearly growth in percentage of posts created by the user.
 	```
 	Divide(([Measures].[m_ID_distinct] - 
 		([DateDimensionPost].[DateDimensionPost].CurrentMember.Lag(12), [Measures].[m_ID_distinct])), 
 		([DateDimensionPost].[DateDimensionPost].CurrentMember.Lag(12), [Measures].[m_ID_distinct]), 0)
 	```
 
-- YTY_Questions_num -
+- YTY_Questions_num - Yearly growth of posts with type Question created by the user.
 	```
 	[Measures].[m_CountQuestions_sum] - 
 		([DateDimensionPost].[DateDimensionPost].CurrentMember.Lag(12), [Measures].[m_CountQuestions_sum])
 	```
 
-- YTY_Questions_percent -
+- YTY_Questions_percent - Yearly growth in percentage of posts with type Question created by the user.
 	```
 	Divide(([Measures].[m_CountQuestions_sum] - 
 		([DateDimensionPost].[DateDimensionPost].CurrentMember.PrevMember,[Measures].[m_CountQuestions_sum])), 
 		([DateDimensionPost].[DateDimensionPost].CurrentMember.PrevMember,[Measures].[m_CountQuestions_sum]), 0)
-	```
-	
-- TotalArticlesMonth - the sum of InterSystems members for the entire period up to a certain month.
-	```
-	Sum([DateDimensionPosts].[DateDimensionPosts].CurrentMember.FirstChild : 
-		[DateDimensionPosts].[DateDimensionPosts].CurrentMember,[Measures].[m_CountArticle_sum])
-	```
- 
-- TotalPostsMonth - 
-	```
-	Sum([DateDimensionPosts].[DateDimensionPosts].CurrentMember.FirstChild : 
-		[DateDimensionPosts].[DateDimensionPosts].CurrentMember,[Measures].[m_ID_distinct])
-	```
- 
-- TotalQuestionsMonth - 
-	```
-	Sum([DateDimensionPosts].[DateDimensionPosts].CurrentMember.FirstChild : 
-		[DateDimensionPosts].[DateDimensionPosts].CurrentMember,[Measures].[m_CountQuestions_sum])
 	```
  
 ### Formula field

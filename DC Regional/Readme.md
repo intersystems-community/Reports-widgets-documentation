@@ -451,7 +451,7 @@ _This chart shows the number of new posts by type for each month._
 #### Measures
 - m_ID_distinct Group By PostType
 	
-#### Category
+#### Category (X-Axis)
 - PostType
 
 #### Dimensions (Series)
@@ -530,7 +530,7 @@ _This diagram shows the breakdown of all new members per month into 2 categories
 #### Measures
 - members_m_ID_distinct Group By members_ISCMemberStr
 	
-#### Category
+#### Category (X-Axis)
 - members_ISCMemberStr
 
 #### Series
@@ -594,14 +594,67 @@ _This chart shows the number of active members per month._
 
 _This chart shows the number of active customers per month._
 
+<details>
+<summary>For developers</summary>
+
+#### Measures
+- m_Member_distinct
+
+#### Dimensions
+- contributedmembers_MonthYear
+
+#### Filters
+	```
+	contributedmembers_ISCMembersStr = Customers
+	AND
+	contributedmembers_MonthYearNum >= @Last12Month
+	```
+	
+</details>
+
 ### InterSystems Contributors Monthly bar chart
 
 _This chart shows the number of active InterSystems employees per month._
+
+
+<details>
+<summary>For developers</summary>
+
+#### Measures
+- m_Member_distinct
+
+#### Dimensions
+- contributedmembers_MonthYear
+
+#### Filters
+	```
+	contributedmembers_ISCMembersStr = InterSystems
+	AND
+	contributedmembers_MonthYearNum >= @Last12Month
+	```
+	
+</details>
+
 
 ### Posting Contribution
 
 _This chart shows the number of new posts and new comments on all posts per month._
 
+
+<details>
+<summary>For developers</summary>
+
+#### Measures
+- m_CommentsContribution Group By MonthYear
+- m_ID_distinct Group By MonthYear
+	
+#### Dimensions
+- MonthYear
+
+#### Filters
+- MonthYearNum >= @Last12Month
+	
+</details>
 
 
 ## Page 6
@@ -610,28 +663,142 @@ _This chart shows the number of new posts and new comments on all posts per mont
 
 _This chart shows a breakdown of the number of new posts per month by post type._ 
 
+
+<details>
+<summary>For developers</summary>
+
+#### Measures
+- m_ID_distinct Group By PostType
+
+#### Category (X-Axis)
+- PostType
+	
+#### Series
+- MonthYear
+
+#### Filters
+- MonthYearNum >= @Last12Month
+	
+</details>
+
+
 ### Products Contribution Breakdown: Caché, Ensemble, HealthShare, IRIS
 
 _This chart shows a breakdown of the number of new posts per month by project._
+
+<details>
+<summary>For developers</summary>
+
+#### Measures
+- m_CountTagCache_sum Group By MonthYear
+- m_CountTagEnsemble_sum Group By MonthYear
+- m_CountTagHealthShare_sum Group By MonthYear
+- m_CountTagIRIS_sum Group By MonthYear
+
+#### Dimensions
+- MonthYear
+
+#### Filters
+- MonthYearNum >= @Last12Month
+
+</details>
 
 ### Articles by InterSystems And Customers breakdown
 
 _This chart shows a breakdown of the number of new Articles per month by author status: InterSystems employee or customer._ 
 
+<details>
+<summary>For developers</summary>
+
+#### Measures
+- m_ID_distinct Group By ISCMemberStr
+
+#### Category (X-Axis)
+- ISCMemberStr
+
+#### Series
+- MonthYear
+
+#### Filters
+```
+MonthYearNum >= @Last12Month
+AND
+PostType = Article
+```
+	
+</details>
 
 ## Page 7
 
 ### Questions by InterSystems and Customers Breakdown
 
-_This chart shows a breakdown of the number of new Questions per month by author status: InterSystems employee or customer._  
+_This chart shows a breakdown of the number of new Questions per month by author status: InterSystems employee or customer._ 
+
+
+<details>
+<summary>For developers</summary>
+
+#### Measures
+- m_ID_distinct Group By ISCMemberStr
+
+#### Category (X-Axis)
+- ISCMemberStr
+
+#### Series
+- MonthYear
+
+#### Filters
+```
+MonthYearNum >= @Last12Month
+AND
+PostType = Question
+```
+	
+</details>
+
 
 ### Customers Weekly Contribution Level in Questions
 
 _This chart shows the number of new Questions per week._
 
+
+<details>
+<summary>For developers</summary>
+
+#### Measures
+- m_CountQestions_sum
+	
+#### Category (X-Axis)
+- YearWeek
+
+#### Filters
+- MonthYearNum >= @Last12Month
+	
+</details>
+
+
 ### Comments and Answers
 
-_This chart shows a breakdown of the number of new Comments on all posts per month by author status: InterSystems employee or customer._  
+_This chart shows a breakdown of the number of new Comments on all posts per month by author status: InterSystems employee or customer._
+
+
+<details>
+<summary>For developers</summary>
+
+#### Measures
+- m_CommentsContribution Group By posts_ISCMemberStr
+
+#### Category (X-Axis)
+- posts_ISCMemberStr
+
+#### Series
+- MonthYear
+	
+#### Filters
+- MonthYearNum >= @Last12Month
+
+</details>
+
 
 ## Page 8
 

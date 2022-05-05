@@ -406,7 +406,6 @@ _Members Total shows the number of users registered on the site at the end of ea
 <details>
 <summary>For developers</summary>
 
-
 #### Measures
 - TotalMemberMonth
 	
@@ -436,7 +435,7 @@ _The table shows the cumulative total and the number of new posts per month by P
 - m_CountDiscussion_sum
 
 #### Dimensions
-- MonthYearPosts
+- MonthYear
 
 #### Filters
 - MonthYearNum >= @Last6Month
@@ -472,15 +471,31 @@ _The table shows the total number of post views, new views per month, the averag
 
 <details>
 <summary>For developers</summary>
+	
+#### Rows
+- views_PostType
 
-4 tables with MonthYearView in Group.Only the last 6 months are taken with the exception of the current one. The following filter is used for this: 
-MonthYearViewNum > @Last6Month
-AND
-MonthYearViewNum != @CurrentMonthNum
-For the first table: TotalViewsMonth and m_Delta_sum in Display.
-For the second table:  AvgArticleViews in Display. This is the Crosstab Formula field, formula : @(@PostType:"ARTICLE", Sum(@posts_m_Views_avg)).
-For the third table AvgQuestionsViews in Display. This is the Crosstab Formula field, formula : @(@PostType:"QUESTION", Sum(@posts_m_Views_avg)).
+#### Columns
+- views_MonthYear
 
+#### Measures
+- TotalViewsMonth
+- m_Delta_sum
+
+#### Crosstab Formulas
+- AvgViewsArticle
+	```
+	@(@views_PostType:"ARTICLE", Sum(@m_Views_avg))
+	```
+
+- AvgViewsQuestion
+	```
+	@(@views_PostType:"QUESTION", Sum(@m_Views_avg))
+	```
+
+#### Filters
+- views_MonthYearNum >= @Last6Month
+	
 </details>
 
 ### View Total bar chart
@@ -489,7 +504,16 @@ _The chart shows the number of new views of all community posts per month._
 <details>
 <summary>For developers</summary>
 
-Bar chart with m_Delta_sum in Show Values and MonthYearView in Category. Only the last 6 months are taken into MonthYearView using the Select Bottom N function, and the current month skipped by filter.
+#### Dimensions
+- views_MonthYear
+
+#### Measures
+- m_Delta_sum
+	
+#### Filter
+- views_MonthYearNum >= @Last6Month
+	
+Bar chart with m_Delta_sum in Show Values and MonthYearView in Category. Only the last 6 months are taken into MonthYearView using the Select Bottom N function.
 
 </details>
 
@@ -499,9 +523,69 @@ Bar chart with m_Delta_sum in Show Values and MonthYearView in Category. Only th
 
 _This diagram shows the breakdown of all new members per month into 2 categories - InterSystems employees and customers._ 
 
+<details>
+<summary>For developers</summary>
+
+
+#### Measures
+- members_m_ID_distinct Group By members_ISCMemberStr
+	
+#### Category
+- members_ISCMemberStr
+
+#### Series
+- members_MonthYear
+	
+#### Filters
+- members_MonthYearNum >= @Last12Month
+
+</details>
+
+
+### Month-to-Month Member Growth
+
+_This table shows a comparison with the previous month in terms of the number of new users._
+
+<details>
+<summary>For developers</summary>
+	
+#### Measures
+- TotalMemberMonth
+- MTM_Member_num
+- MTM_Member_percent
+
+#### Rows
+- members_MonthYear
+
+#### Columns
+- members_ISCMemberStr
+
+#### Filters
+	```
+	members_MonthYearNum = @Last1Month
+	OR
+	members_MonthYearNum = @Last2Month
+	```
+
+</details>
+
 ### Contributors Monthly bar chart
 
 _This chart shows the number of active members per month._
+
+<details>
+<summary>For developers</summary>
+	
+#### Measures
+- contributedmembers_MonthYear
+	
+#### Dimensions
+- m_Member_distinct
+
+#### Filters
+- members_MonthYearNum >= @Last12Month
+	
+</details>
 
 
 ## Page 5

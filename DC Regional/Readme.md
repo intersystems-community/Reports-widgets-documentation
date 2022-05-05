@@ -806,13 +806,303 @@ _This chart shows a breakdown of the number of new Comments on all posts per mon
 
 _The table shows MTM and YTY comparisons with the current month. The comparison is based on data on all posts, articles, questions and comments, as well as on the average number of posts and comments per day._
 
+<details>
+<summary>For developers</summary>
+
+#### Measures
+- m_ID_distinct
+- m_CountArticle_sum
+- m_CountQuestions_sum
+- m_CommentsContribution
+- PostsPerDay
+- CommentsPerDay
+- MTM_Posts_num
+- MTM_Posts_percent
+- MTM_Articles_num
+- MTM_Articles_percent
+- MTM_Questions_num
+- MTM_Questions_percent
+- MTM_CommentsContribution_num
+- MTM_CommentsContribution_percent
+- YTY_Posts_num
+- YTY_Posts_percent
+- YTY_Articles_num
+- YTY_Articles_percent
+- YTY_Questions_num
+- YTY_Questions_percent
+- YTY_CommentsContribution_num
+- YTY_CommentsContribution_percent
+	
+#### Rows
+- MonthYear
+	
+#### Crosstab Formulas
+- CommentsPerDay
+	```
+	(SUM(@m_CommentsContribution) - SUM(@YTY_CommentsContribution_num)) / 365 * 12
+	```
+	
+- CommentsPerDay_MTM
+	```
+	SUM(@MTM_CommentsContribution_num) / 365 * 12
+	```
+	
+- CommentsPerDay_YTY
+	```
+	SUM(@YTY_CommentsContribution_num) / 365 * 12
+	```
+
+- LastYearArticles
+	```
+	SUM(@m_CountArticle_sum) - SUM(@YTY_Articles_num)
+	```
+
+- LastYearComments
+	```
+	SUM(@m_CommentsContribution) - SUM(@YTY_CommentsContribution_num)
+	```
+
+- LastYearPosts
+	```
+	SUM(@m_ID_distinct) - SUM(@YTY_Posts_num)
+	```
+
+- LastYearQuestions
+	```
+	SUM(@m_CountQuestions_sum) - SUM(@YTY_Questions_num)
+	```
+
+- PostsPerDay
+	```
+	(SUM(@m_ID_distinct) - SUM(@YTY_Posts_num)) / 365 * 12
+	```
+	
+- PostsPerDay_MTM
+	```
+	SUM(@MTM_Posts_num) / 365 * 12
+	```
+
+- PostsPerDay_YTY
+	```
+	SUM(@YTY_Posts_num) / 365 * 12
+	```
+
+#### Formula
+- Average(m_ID_distinct)
+- Average(m_CountArticle_sum)
+- Average(m_CountQuestions_sum)
+- Average(m_CommentsContribution)
+- Average(PostsPerDay)
+- Average(CommentsPerDay)
+
+#### Filters
+- MonthYearNum >= @Last2Month
+	
+</details>
+
 ### InterSystems
 
 _The table shows MTM and YTY comparisons with the current month. The comparison is based on data on all posts, articles, questions and comments, as well as on the average number of posts and comments per day. Only data on the activity of InterSystems employees was taken._
 
+<details>
+<summary>For developers</summary>
+
+#### Measures
+- m_ID_distinct
+- m_CountArticle_sum
+- m_CountQuestions_sum
+- m_CommentsContribution
+- PostsPerDay
+- CommentsPerDay
+- MTM_Posts_num
+- MTM_Posts_percent
+- MTM_Articles_num
+- MTM_Articles_percent
+- MTM_Questions_num
+- MTM_Questions_percent
+- MTM_CommentsContribution_num
+- MTM_CommentsContribution_percent
+- YTY_Posts_num
+- YTY_Posts_percent
+- YTY_Articles_num
+- YTY_Articles_percent
+- YTY_Questions_num
+- YTY_Questions_percent
+- YTY_CommentsContribution_num
+- YTY_CommentsContribution_percent
+	
+#### Rows
+- MonthYear
+	
+#### Crosstab Formulas
+- CommentsPerDay
+	```
+	(SUM(@m_CommentsContribution) - SUM(@YTY_CommentsContribution_num)) / 365 * 12
+	```
+	
+- CommentsPerDay_MTM
+	```
+	SUM(@MTM_CommentsContribution_num) / 365 * 12
+	```
+	
+- CommentsPerDay_YTY
+	```
+	SUM(@YTY_CommentsContribution_num) / 365 * 12
+	```
+
+- LastYearArticles
+	```
+	SUM(@m_CountArticle_sum) - SUM(@YTY_Articles_num)
+	```
+
+- LastYearComments
+	```
+	SUM(@m_CommentsContribution) - SUM(@YTY_CommentsContribution_num)
+	```
+
+- LastYearPosts
+	```
+	SUM(@m_ID_distinct) - SUM(@YTY_Posts_num)
+	```
+
+- LastYearQuestions
+	```
+	SUM(@m_CountQuestions_sum) - SUM(@YTY_Questions_num)
+	```
+
+- PostsPerDay
+	```
+	(SUM(@m_ID_distinct) - SUM(@YTY_Posts_num)) / 365 * 12
+	```
+	
+- PostsPerDay_MTM
+	```
+	SUM(@MTM_Posts_num) / 365 * 12
+	```
+
+- PostsPerDay_YTY
+	```
+	SUM(@YTY_Posts_num) / 365 * 12
+	```
+
+#### Formula
+- Average(m_ID_distinct)
+- Average(m_CountArticle_sum)
+- Average(m_CountQuestions_sum)
+- Average(m_CommentsContribution)
+- Average(PostsPerDay)
+- Average(CommentsPerDay)
+
+#### Filters
+```
+MonthYearNum >= @Last2Month
+AND
+posts_ISCMembersStr = InterSystems
+```
+	
+</details>
+
 ### Customers
 
 _The table shows MTM and YTY comparisons with the current month. The comparison is based on data on all posts, articles, questions and comments, as well as on the average number of posts and comments per day. Only data on the activity of customers was taken._
+
+<details>
+<summary>For developers</summary>
+
+#### Measures
+- m_ID_distinct
+- m_CountArticle_sum
+- m_CountQuestions_sum
+- m_CommentsContribution
+- PostsPerDay
+- CommentsPerDay
+- MTM_Posts_num
+- MTM_Posts_percent
+- MTM_Articles_num
+- MTM_Articles_percent
+- MTM_Questions_num
+- MTM_Questions_percent
+- MTM_CommentsContribution_num
+- MTM_CommentsContribution_percent
+- YTY_Posts_num
+- YTY_Posts_percent
+- YTY_Articles_num
+- YTY_Articles_percent
+- YTY_Questions_num
+- YTY_Questions_percent
+- YTY_CommentsContribution_num
+- YTY_CommentsContribution_percent
+	
+#### Rows
+- MonthYear
+	
+#### Crosstab Formulas
+- CommentsPerDay
+	```
+	(SUM(@m_CommentsContribution) - SUM(@YTY_CommentsContribution_num)) / 365 * 12
+	```
+	
+- CommentsPerDay_MTM
+	```
+	SUM(@MTM_CommentsContribution_num) / 365 * 12
+	```
+	
+- CommentsPerDay_YTY
+	```
+	SUM(@YTY_CommentsContribution_num) / 365 * 12
+	```
+
+- LastYearArticles
+	```
+	SUM(@m_CountArticle_sum) - SUM(@YTY_Articles_num)
+	```
+
+- LastYearComments
+	```
+	SUM(@m_CommentsContribution) - SUM(@YTY_CommentsContribution_num)
+	```
+
+- LastYearPosts
+	```
+	SUM(@m_ID_distinct) - SUM(@YTY_Posts_num)
+	```
+
+- LastYearQuestions
+	```
+	SUM(@m_CountQuestions_sum) - SUM(@YTY_Questions_num)
+	```
+
+- PostsPerDay
+	```
+	(SUM(@m_ID_distinct) - SUM(@YTY_Posts_num)) / 365 * 12
+	```
+	
+- PostsPerDay_MTM
+	```
+	SUM(@MTM_Posts_num) / 365 * 12
+	```
+
+- PostsPerDay_YTY
+	```
+	SUM(@YTY_Posts_num) / 365 * 12
+	```
+
+#### Formula
+- Average(m_ID_distinct)
+- Average(m_CountArticle_sum)
+- Average(m_CountQuestions_sum)
+- Average(m_CommentsContribution)
+- Average(PostsPerDay)
+- Average(CommentsPerDay)
+
+#### Filters
+```
+MonthYearNum >= @Last2Month
+AND
+posts_ISCMembersStr = Customers
+```
+	
+</details>
 
 ## Page 9
 

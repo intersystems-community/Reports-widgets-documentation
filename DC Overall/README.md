@@ -30,7 +30,7 @@ Post_date is the formula “FirstDayOfMonth(@posts_[FullDate](https://github.com
 
 ### _Members_
 
-_A member counts in every community in which (s)he participates. All members participate in the English community. Members who have been banned from the portal do not count._
+_A member counts in every community in which (s)he participates. All members participate in the English community by default. If a member has shown any activity in a non-English community, we mark him or her as a new member using the date of registration. So, if community in French was launched in March we can still see members joined in January and previous months. Members who have been banned from the portal do not count._
 
 ### _Posts_
 

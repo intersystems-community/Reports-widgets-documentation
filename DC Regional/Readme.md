@@ -375,7 +375,7 @@
 
 ## General information
 
-Any registered user who has been active in the community is counted as a member of the community. A user can be a member of several communities at the same time.
+A member counts in every community in which (s)he participates. All members participate in the English community by default. If a member has shown any activity in a non-English community, we mark him or her as a new member using the date of registration. So, if community in French was launched in March we can still see members joined in January and previous months. Members who have been banned from the portal do not count.
 
 Removed data about unpublished and deleted posts, as well as Digest type posts from data about posts and their views.
 

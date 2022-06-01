@@ -1311,3 +1311,69 @@ _This chart shows the distribution of views across the projects to which the pos
 </details>
 
 ## Page 13
+
+### Most Viewed
+_This chart shows the top 10 users by number of views on their posts_
+
+<details>
+<summary>For developers</summary>
+
+#### Measures
+- posts_m_Views_sum
+	
+#### Dimensions
+- AuthorFullName
+- NamePost
+	
+#### Filters
+	```
+	MonthYearNum = @Last1Month
+	AND
+	posts_m_Views_sum > 0
+	```
+	
+</details>
+
+### Most Liked
+_This chart shows the top 10 users by the number of likes on their posts._
+
+<details>
+<summary>For developers</summary>
+
+#### Measures
+- m_AvgVote_sum
+	
+#### Dimensions
+- AuthorFullName
+- NamePost
+	
+#### Filters
+	```
+	MonthYearNum = @Last1Month
+	AND
+	posts_m_Views_sum > 0
+	```
+	
+</details>
+
+### Most Commented
+_This chart shows the top 10 users by the number of comments on their posts._
+
+<details>
+<summary>For developers</summary>
+
+#### Measures
+- m_CommentsAmount_sum
+	
+#### Dimensions
+- AuthorFullName
+- NamePost
+	
+#### Filters
+	```
+	MonthYearNum = @Last1Month
+	AND
+	posts_m_Views_sum > 0
+	```
+	
+</details>

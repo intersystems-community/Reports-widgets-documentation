@@ -1118,8 +1118,25 @@ Points are the sum of the following:
     The number of given correct answers to questions.
     The number of comments on posts written by the member.
     The number of times a member's posts have been added to favorites.
-
-
+    
+<details>
+<summary>For developers</summary>
+#### Measures
+- m_Overall_sum
+	
+#### Dimensions
+- conributedmembers_Name
+	
+#### Filters
+	```
+	contributedmembers_MonthYearNum = @Last1Month
+	AND
+	m_Overall_sum > 0
+	AND
+	contributedmembers_ISCMembersStr = Customers
+	```
+</details>
+	
 ### Best Contributors: InterSystems
 
 _The table shows the most active InterSystems employees for the month._
@@ -1133,11 +1150,31 @@ Points are the sum of the following:
     The number of comments on posts written by the member.
     The number of times a member's posts have been added to favorites.
 
+<details>
+<summary>For developers</summary>
+#### Measures
+- m_Overall_sum
+	
+#### Dimensions
+- conributedmembers_Name
+	
+#### Filters
+	```
+	contributedmembers_MonthYearNum = @Last1Month
+	AND
+	m_Overall_sum > 0
+	AND
+	contributedmembers_ISCMembersStr = InterSystems
+	```
+</details>
+
 ## Page 10
 
 ### Best Contributors
 
 _This chart shows the distribution of points of the most active members of the community by category._
+
+
 
 ### Customers
 

@@ -1174,11 +1174,47 @@ Points are the sum of the following:
 
 _This chart shows the distribution of points of the most active members of the community by category._
 
-
+<details>
+<summary>For developers</summary>
+	
+#### Measures
+- m CommentsVotes_sum By Name
+- m_Comments Group By Name
+- m_CommentsAmount_sum Group By Name
+- m_PostFavs_sum Group By Name
+- m_Posts_sum Group By Name
+- m_PostVotes_sum Group By Name
+- m_Views_sum Group By Name
+	
+#### Dimensions
+- Name
+	
+#### Filters
+	```
+	MonthYearNum = @Last1Month
+	```
+	
+</details>
 
 ### Customers
 
 _This table shows the most active community members of all time._
+
+<details>
+<summary>For developers</summary>
+
+#### Measures
+- m_Overall_sum
+
+#### Dimensions
+- contributedmembers_Name
+
+#### Filters
+	```
+	m_Overall_sum > 0
+	```
+	
+</details>
 
 ## Page 11
 
@@ -1186,9 +1222,48 @@ _This table shows the most active community members of all time._
 
 _This chart shows the number of views per month of all posts and questions._
 
+<details>
+<summary>For developers</summary>
+
+#### Category (X-Axis)
+- views_PostType
+	
+#### Series
+- views_MonthYear
+	
+#### Measures
+- m_Views_avg Group By views_PostType
+	
+#### Filters
+	```
+	views_MonthYearNum >= @Last12Month
+	AND
+		views_PostType = Article
+		OR
+		views_PostType = Question
+	```
+	
+</details>
+
 ### Unique Views Per Every Post
 
 _This chart shows the average number of views among community posts._
+
+<details>
+<summary>For developers</summary>
+
+#### Category (X-Axis)
+- views_MonthYear
+	
+#### Measures
+- m_Views_avg
+	
+#### Filters
+	```
+	views_MonthYearNum => @Last12Month
+	```
+	
+</details>
 
 ## Page 12
 
@@ -1196,8 +1271,43 @@ _This chart shows the average number of views among community posts._
 
 _This chart shows the number of views of all community posts in a month._
 
+<details>
+<summary>For developers</summary>
+
+#### Dimensions
+- views_MonthYear
+	
+#### Measures
+- m_Delta_sum
+	
+#### Filters
+	```
+	views_MonthYearNum >= @Last12Month
+	```
+		
+</details>
+
 ### Total Views Monthly: Caché, Ensemble, HealthShare, IRIS
 
 _This chart shows the distribution of views across the projects to which the posts belong._
+
+<details>
+<summary>For developers</summary>
+
+#### Measures
+- m_CacheTag_sum Group By views_MonthYear
+- m_EnsambleTag_sum Group By views_MonthYear
+- m_HealthShareTag_sum Group By views_MonthYear
+- m_InterSystemsIRISTag_sum Group By views_MonthYear
+	
+#### Dimensions
+- views_MonthYear
+	
+#### Filters
+	```
+	views_MonthYearNum >= @Last12Month
+	```
+	
+</details>
 
 ## Page 13

@@ -396,7 +396,7 @@ _The table shows the dynamics of the number of members, new members per month, n
 - member_MonthYear
 
 #### Filters
-- members_MonthYearNum >= @Last6Month
+	members_MonthYearNum >= @Last6Month
 
 </details>
 
@@ -413,7 +413,7 @@ _Members Total shows the number of users registered on the site at the end of ea
 - members_MonthYear
 
 #### Filters
-- members_MonthYearNum >= @Last6Month
+	members_MonthYearNum >= @Last6Month
 
 </details>
 
@@ -438,7 +438,7 @@ _The table shows the cumulative total and the number of new posts per month by P
 - MonthYear
 
 #### Filters
-- MonthYearNum >= @Last6Month
+	MonthYearNum >= @Last6Month
 
 </details>
 
@@ -458,7 +458,7 @@ _This chart shows the number of new posts by type for each month._
 - MonthYear
 
 #### Filters
-- MonthYearNum >= @Last6Month
+	MonthYearNum >= @Last6Month
 	
 Bar chart with New Questions, New Articles, New Announcements and New Discussions in Show Values, MonthYearPosts in Category. Only the last 6 months are taken into MonthYearPosts using the Select Bottom N function.
 
@@ -494,7 +494,7 @@ _The table shows the total number of post views, new views per month, the averag
 	```
 
 #### Filters
-- views_MonthYearNum >= @Last6Month
+	views_MonthYearNum >= @Last6Month
 	
 </details>
 
@@ -511,7 +511,7 @@ _The chart shows the number of new views of all community posts per month._
 - m_Delta_sum
 	
 #### Filter
-- views_MonthYearNum >= @Last6Month
+	views_MonthYearNum >= @Last6Month
 	
 Bar chart with m_Delta_sum in Show Values and MonthYearView in Category. Only the last 6 months are taken into MonthYearView using the Select Bottom N function.
 
@@ -537,7 +537,7 @@ _This diagram shows the breakdown of all new members per month into 2 categories
 - members_MonthYear
 	
 #### Filters
-- members_MonthYearNum >= @Last12Month
+	members_MonthYearNum >= @Last12Month
 
 </details>
 
@@ -561,11 +561,9 @@ _This table shows a comparison with the previous month in terms of the number of
 - members_ISCMemberStr
 
 #### Filters
-	```
 	members_MonthYearNum = @Last1Month
 	OR
 	members_MonthYearNum = @Last2Month
-	```
 
 </details>
 
@@ -583,7 +581,7 @@ _This chart shows the number of active members per month._
 - m_Member_distinct
 
 #### Filters
-- members_MonthYearNum >= @Last12Month
+	members_MonthYearNum >= @Last12Month
 	
 </details>
 
@@ -604,11 +602,9 @@ _This chart shows the number of active customers per month._
 - contributedmembers_MonthYear
 
 #### Filters
-	```
 	contributedmembers_ISCMembersStr = Customers
 	AND
 	contributedmembers_MonthYearNum >= @Last12Month
-	```
 	
 </details>
 
@@ -627,11 +623,9 @@ _This chart shows the number of active InterSystems employees per month._
 - contributedmembers_MonthYear
 
 #### Filters
-	```
 	contributedmembers_ISCMembersStr = InterSystems
 	AND
 	contributedmembers_MonthYearNum >= @Last12Month
-	```
 	
 </details>
 
@@ -652,7 +646,7 @@ _This chart shows the number of new posts and new comments on all posts per mont
 - MonthYear
 
 #### Filters
-- MonthYearNum >= @Last12Month
+	MonthYearNum >= @Last12Month
 	
 </details>
 
@@ -677,7 +671,7 @@ _This chart shows a breakdown of the number of new posts per month by post type.
 - MonthYear
 
 #### Filters
-- MonthYearNum >= @Last12Month
+	MonthYearNum >= @Last12Month
 	
 </details>
 
@@ -699,7 +693,7 @@ _This chart shows a breakdown of the number of new posts per month by project._
 - MonthYear
 
 #### Filters
-- MonthYearNum >= @Last12Month
+	MonthYearNum >= @Last12Month
 
 </details>
 
@@ -720,11 +714,9 @@ _This chart shows a breakdown of the number of new Articles per month by author 
 - MonthYear
 
 #### Filters
-```
-MonthYearNum >= @Last12Month
-AND
-PostType = Article
-```
+	MonthYearNum >= @Last12Month
+	AND
+	PostType = Article
 	
 </details>
 
@@ -748,11 +740,9 @@ _This chart shows a breakdown of the number of new Questions per month by author
 - MonthYear
 
 #### Filters
-```
-MonthYearNum >= @Last12Month
-AND
-PostType = Question
-```
+	MonthYearNum >= @Last12Month
+	AND
+	PostType = Question
 	
 </details>
 
@@ -772,7 +762,7 @@ _This chart shows the number of new Questions per week._
 - YearWeek
 
 #### Filters
-- MonthYearNum >= @Last12Month
+	MonthYearNum >= @Last12Month
 	
 </details>
 
@@ -795,7 +785,7 @@ _This chart shows a breakdown of the number of new Comments on all posts per mon
 - MonthYear
 	
 #### Filters
-- MonthYearNum >= @Last12Month
+	MonthYearNum >= @Last12Month
 
 </details>
 
@@ -994,11 +984,9 @@ _The table shows MTM and YTY comparisons with the current month. The comparison 
 - Average(CommentsPerDay)
 
 #### Filters
-```
-MonthYearNum >= @Last2Month
-AND
-posts_ISCMembersStr = InterSystems
-```
+	MonthYearNum >= @Last2Month
+	AND
+	posts_ISCMembersStr = InterSystems
 	
 </details>
 
@@ -1096,11 +1084,9 @@ _The table shows MTM and YTY comparisons with the current month. The comparison 
 - Average(CommentsPerDay)
 
 #### Filters
-```
-MonthYearNum >= @Last2Month
-AND
-posts_ISCMembersStr = Customers
-```
+	MonthYearNum >= @Last2Month
+	AND
+	posts_ISCMembersStr = Customers
 	
 </details>
 
@@ -1128,13 +1114,11 @@ Points are the sum of the following:
 - conributedmembers_Name
 	
 #### Filters
-	```
 	contributedmembers_MonthYearNum = @Last1Month
 	AND
 	m_Overall_sum > 0
 	AND
 	contributedmembers_ISCMembersStr = Customers
-	```
 </details>
 	
 ### Best Contributors: InterSystems
@@ -1159,13 +1143,11 @@ Points are the sum of the following:
 - conributedmembers_Name
 	
 #### Filters
-	```
 	contributedmembers_MonthYearNum = @Last1Month
 	AND
 	m_Overall_sum > 0
 	AND
 	contributedmembers_ISCMembersStr = InterSystems
-	```
 </details>
 
 ## Page 10
@@ -1190,9 +1172,7 @@ _This chart shows the distribution of points of the most active members of the c
 - Name
 	
 #### Filters
-	```
 	MonthYearNum = @Last1Month
-	```
 	
 </details>
 
@@ -1210,9 +1190,7 @@ _This table shows the most active community members of all time._
 - contributedmembers_Name
 
 #### Filters
-	```
 	m_Overall_sum > 0
-	```
 	
 </details>
 
@@ -1235,13 +1213,11 @@ _This chart shows the number of views per month of all posts and questions._
 - m_Views_avg Group By views_PostType
 	
 #### Filters
-	```
 	views_MonthYearNum >= @Last12Month
 	AND
 		views_PostType = Article
 		OR
 		views_PostType = Question
-	```
 	
 </details>
 
@@ -1259,9 +1235,7 @@ _This chart shows the average number of views among community posts._
 - m_Views_avg
 	
 #### Filters
-	```
 	views_MonthYearNum => @Last12Month
-	```
 	
 </details>
 
@@ -1281,9 +1255,7 @@ _This chart shows the number of views of all community posts in a month._
 - m_Delta_sum
 	
 #### Filters
-	```
 	views_MonthYearNum >= @Last12Month
-	```
 		
 </details>
 
@@ -1304,9 +1276,7 @@ _This chart shows the distribution of views across the projects to which the pos
 - views_MonthYear
 	
 #### Filters
-	```
 	views_MonthYearNum >= @Last12Month
-	```
 	
 </details>
 
@@ -1326,11 +1296,9 @@ _This chart shows the top 10 users by number of views on their posts_
 - NamePost
 	
 #### Filters
-	```
 	MonthYearNum = @Last1Month
 	AND
 	posts_m_Views_sum > 0
-	```
 	
 </details>
 
@@ -1348,11 +1316,9 @@ _This chart shows the top 10 users by the number of likes on their posts._
 - NamePost
 	
 #### Filters
-	```
 	MonthYearNum = @Last1Month
 	AND
 	posts_m_Views_sum > 0
-	```
 	
 </details>
 
@@ -1370,10 +1336,8 @@ _This chart shows the top 10 users by the number of comments on their posts._
 - NamePost
 	
 #### Filters
-	```
 	MonthYearNum = @Last1Month
 	AND
 	posts_m_Views_sum > 0
-	```
-	
+		
 </details>

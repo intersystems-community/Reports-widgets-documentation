@@ -229,7 +229,7 @@ Growth percentage tables have formulas (Param_0 – Param_11)/ Param_0 for the y
 
 </details>
 
-## Pages 9
+## Page 9
 m_Count_sum – group of metrics, summing up all publications of their type.
 
 ### Articles line chart

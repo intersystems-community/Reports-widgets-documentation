@@ -123,6 +123,17 @@ In this tables MonthYear is in Group to have a group that is needed to avoid thi
 </details>
 
 ## Page 5
+### Top 25 Countries by User Ammount
+_This chart shows the distribution of community members by their home countries. Not all members of the community marked their country in the profile, so the information on the chart is far from complete. Only the top 25 countries are taken to fit the chart on the page._
+
+<details>
+<summary>For developers</summary>
+
+Bench chart with Users by country in Show Values. Users by country is the summary on m_ID_distinct (measure, that count member's unique ID), group by Country_code (code of member's home country). Aggregate Function is Sum. Only the top 25 are taken into Country_code using the Select Bottom N function.
+
+</details>
+
+## Page 6
 ### New Posts bar chart
 _New [Posts](https://github.com/teccod/Reports-widgets-documentation/blob/main/README.md#posts) shows how many new posts were published per month_
 
@@ -140,7 +151,7 @@ Bar chart with [posts_lang](https://github.com/teccod/Reports-widgets-documentat
 Crosstab with [m_post_id_count](https://github.com/teccod/Reports-widgets-documentation#m_post_id_count) in summarys, [Post_date](https://github.com/teccod/Reports-widgets-documentation#post_date) in Rows and [posts_lang](https://github.com/teccod/Reports-widgets-documentation#posts_lang) in Columns. Fulter: to display only last 6 months and not display current month.
 </details>
 
-## Page 6
+## Page 7
 ### Total Posts
 _Running Total [Posts](https://github.com/teccod/Reports-widgets-documentation/blob/main/README.md#posts) of any type shows how many posts were published for the entire period until the end of the specified month_
 
@@ -192,7 +203,7 @@ Table with [posts_lang](https://github.com/teccod/Reports-widgets-documentation#
 
 </details>
 
-## Page 7
+## Page 8
 ### Total Posts for last year
 _Total [Posts](https://github.com/teccod/Reports-widgets-documentation/blob/main/README.md#posts) for last year shows how many posts were published in the last 12 months_
 
@@ -218,7 +229,7 @@ Growth percentage tables have formulas (Param_0 – Param_11)/ Param_0 for the y
 
 </details>
 
-## Pages 8
+## Pages 9
 m_Count_sum – group of metrics, summing up all publications of their type.
 
 ### Articles line chart
@@ -264,7 +275,7 @@ Crosstab with m_CountQuestions_sum in summarys, [Post_date](https://github.com/t
 
 </details>
 
-## Page 9
+## Page 10
 ### Announcements line chart
 _Announcements shows how many new Announcements were published per month. Announcements are [posts](https://github.com/teccod/Reports-widgets-documentation/blob/main/README.md#posts) that talk about community news._
 
@@ -307,7 +318,7 @@ Crosstab with m_CountDiscussions_sum in summarys, [Post_date](https://github.com
 
 </details>
 
-## Page 10
+## Page 11
 ### Questions Situation pie chart
 _This chart shows the distribution of the total number of questions into 3 categories: answer accepted, answer received and no answer._
 
@@ -330,7 +341,7 @@ Bar chart Questions summary in Show Values and QuestionType in Series. Only the 
 
 </details>
 
-## Page 11
+## Page 12
 Views have another datasours – IRIS directly. Querry have the filter not to show data for current month.
 
 <details>
@@ -358,7 +369,7 @@ Bar chart with [New_Views_monthly](https://github.com/teccod/Reports-widgets-doc
 
 </details>
 
-## Page 12
+## Page 13
 ### Total Views
 _Total Views shows how many views all posts had in total_
 
